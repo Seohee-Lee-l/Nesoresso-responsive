@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nespresso_Coffee</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/item-page.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/xeicon/2/xeicon.min.css">
+    <link rel="stylesheet" href="font/SUIT-woff2 (1)/SUIT.css">
+    <link rel="stylesheet" href="css/animation.css">
+
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery.js"></script>
+</head>
+
+
+<body>
+    <header id="header">
+        <div class="m-header">
+            <a href="rwd_lsh2.html"><img src="img/nespresso-wordmark-black.png" alt="header-logo" class="logo-img"></a>
+            <div class="button-wrapper">
+                <button id="search-btn"><i class="xi-search"></i></button>
+                <button id="menu-btn"><i class="xi-bars"></i></button>   
+            </div>
+        </div>
+    </header>
+
+    <div class="menu" id="nav-menu">
+        <div class="close">
+            <i class="xi-close"></i>
+        </div>
+
+        <ul class="main-menu">
+            <li class="main-sub">
+                <a href="vertuo-coffee.html" class="menu-title">
+                커피
+                <i class="xi-plus-thin"></i>
+                </a>
+                
+                <ul class="sub-menu">
+                    <li><a href="vertuo-coffee.html">버츄오 커피</a></li>
+                    <li><a href="vertuo-coffee.html">오리지널 커피</a></li>
+                    <li><a href="#">내 취향 커피 찾기</a></li>
+                </ul>
+            </li>
+
+            <li class="main-sub">
+                    <a href="vertuo-machine.html" class="menu-title">머신 <i class="xi-plus-thin"></i></a>
+
+                <ul class="sub-menu">
+                    <li><a href="vertuo-machine.html">버츄오 머신</a></li>
+                    <li><a href="vertuo-machine.html">오리지널 머신</a></li>
+                    <li><a href="#">버츄오 / 오리지널 머신 비교</a></li>
+                </ul>
+            </li>
+
+            <li class="main-sub">
+                <a href="#" class="menu-title">액세서리 <i class="xi-plus-thin"></i></a>
+
+                <ul class="sub-menu">
+                    <li><a href="vertuo-acc.html">버츄오 액세서리</a></li>
+                    <li><a href="vertuo-acc.html">오리지널 액세서리</a></li>
+                    <li><a href="acc-milk.html">우유 거품기</a></li>
+                    <li><a href="vertuo-acc.html">푸드 & 바이트</a></li>
+                    <li><a href="#">머신 부속품</a></li>
+                </ul>
+            </li>
+
+            <li class="main-sub">
+                <a href="#" class="menu-title">정품 등록 <i class="xi-plus-thin"></i></a>
+
+                <ul class="sub-menu">
+                    <li><a href="#">정품 등록 안내</a></li>
+                    <li><a href="#">보증 기간 안내</a></li>
+                </ul>
+            </li>
+
+            <li class="main-sub">
+                <a href="#" class="menu-title">프로페셔널<i class="xi-plus-thin"></i></a>
+
+                <ul class="sub-menu">
+                    <li><a href="#">기업용 커피</a></li>
+                    <li><a href="#">기업용 머신</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="user">
+            <?php
+                session_start();
+                include 'top_login.php';
+            ?>
+
+            <a href="cart.html">장바구니</a>
+        </div>
+    </div>
+
+    <div class="menu-modal"></div>
+    
+    <div class="search-pop-down" id="search-bar">
+        <div class="search-wrapper">
+            <div class="search">
+                <form class="search-form">
+                    <div class="search-input">
+                        <input type="search" name="search" id="search_input" placeholder="Search...">
+                    </div>
+                </form>
+
+                <div class="search-icon">
+                    <button><i class="xi-search"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-close">
+            <button>
+                <i class="xi-close"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="search-modal"></div>
+
+
+    <div class="vertuo-coffee">
+        <nav class="quick-menu">
+            <ul>
+                <li><a href="#tab1" class="selected">버츄오</a></li>
+                <li><a href="#tab2">오리지널</a></li>
+                <li><a href="#">내 취향 커피</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="option">
+        <div class="option-wrapper">
+            <ul>
+                <li>
+                    <button id="filter-btn">종류</button>
+
+                    <ul class="sub">
+                        <li><a href="#" class="selected">전체</a></li>
+                        <li><a href="#">리스트레토 25ml</a></li>
+                        <li><a href="#">에스프레소 40ml</a></li>
+                        <li><a href="#">더블 에스프레소 80ml</a></li>
+                        <li><a href="#">그랑 룽고 150ml</a></li>
+                        <li><a href="#">머그 230ml</a></li>
+                        <li><a href="#">XL 355ml</a></li>
+                        <li><a href="#">디카페인</a></li>
+                        <li><a href="#">아이스 커피</a></li>
+                        <li><a href="#">커피 플러스</a></li>
+                        <li><a href="#">추천 세트</a></li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <button id="sort-btn">정렬</button>
+
+                    <ul class="sub">
+                        <li><a href="#" class="selected">추천순</a></li>
+                        <li><a href="#">판매량순</a></li>
+                        <li><a href="#">낮은 가격순</a></li>
+                        <li><a href="#">높은 가격순</a></li>
+                        <li><a href="#">낮은 강도순</a></li>
+                        <li><a href="#">높은 강도순</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="pc-option">
+            <ul class="filter">
+                <li>
+                    <button><a href="#">종류</a></button>
+
+                    <ul class="sub-option">
+                        <li><a href="#" class="selected">전체</a></li>
+                        <li><a href="#">리스트레토 25ml</a></li>
+                        <li><a href="#">에스프레소 40ml</a></li>
+                        <li><a href="#">더블 에스프레소 80ml</a></li>
+                        <li><a href="#">그랑 룽고 150ml</a></li>
+                        <li><a href="#">머그 230ml</a></li>
+                        <li><a href="#">XL 355ml</a></li>
+                        <li><a href="#">디카페인</a></li>
+                        <li><a href="#">아이스 커피</a></li>
+                        <li><a href="#">커피 플러스</a></li>
+                        <li><a href="#">추천 세트</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="sort">
+                <li>
+                    <button><a href="#">정렬</a></button>
+
+                    <ul class="sub-option">
+                        <li><a href="#">추천순</a></li>
+                        <li><a href="#">판매량순</a></li>
+                        <li><a href="#">낮은 가격순</a></li>
+                        <li><a href="#">높은 가격순</a></li>
+                        <li><a href="#">낮은 강도순</a></li>
+                        <li><a href="#">높은 강도순</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="vertuo-coffee-list tab-content" id="tab1">
+            <h5>리스트레토 25ml &amp; 에스프레소 40ml</h5>
+
+            <section>
+                <article class="test">
+                    <div class="name">
+                        <a href="#">리스트레토 클라시코</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/vertuo-espresso-coffee/vertuo-coffee1.avif" alt="vertuo-espresso01">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>짧지만 강렬한 아라비카 커피 한 잔</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 9</span>
+                                <span>25ml</span>
+                            </div>    
+
+                            <span class="price">₩7,700</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">디아볼리토</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/vertuo-espresso-coffee/vertuo-coffee2.webp" alt="vertuo-espresso02">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>매우 진하고 강렬한 풍미</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 11</span>
+                                <span>40ml</span>
+                            </div>    
+
+                            <span class="price">₩7,700</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">일카페</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/vertuo-espresso-coffee/vertuo-coffee3.avif" alt="vertuo-espresso03">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>강렬함과 부드러움의 조화</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 11</span>
+                                <span>40ml</span>
+                            </div>    
+
+                            <span class="price">₩7,700</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">알티시오</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/vertuo-espresso-coffee/vertuo-coffee4.avif" alt="vertuo-espresso04">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>풍성한 크레마의 코코아향 커피</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 9</span>
+                                <span>40ml</span>
+                            </div>    
+
+                            <span class="price">₩7,700</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">오라피오</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/vertuo-espresso-coffee/vertuo-coffee5.avif" alt="vertuo-espresso05">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>달콤하고 균형 잡힌 풍미</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 6</span>
+                                <span>40ml</span>
+                            </div>    
+
+                            <span class="price">₩7,700</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">볼테소</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/vertuo-espresso-coffee/vertuo-coffee6.webp" alt="vertuo-espresso06">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>가볍고 달콤한 풍미</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 4</span>
+                                <span>40ml</span>
+                            </div>    
+
+                            <span class="price">₩7,700</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">알티시오 디카페나토</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/vertuo-espresso-coffee/vertuo-coffee7.webp" alt="vertuo-espresso07">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>풍부한 바디감의 디카페인</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 9</span>
+                                <span>40ml</span>
+                            </div>    
+
+                            <span class="price">₩8,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">비앙코 피콜로 포 밀크</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/vertuo-espresso-coffee/vertuo-coffee8.webp" alt="vertuo-espresso08">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>우유와 어울리는 달콤함</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>40ml</span>
+                            </div>    
+
+                            <span class="price">₩7,700</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="item_vivida.html">스타벅스&reg; 에스프레소 로스트</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="item_vivida.html">
+                            <img src="img/vertuo-espresso-coffee/vertuo-coffee9.avif" alt="vertuo-espresso09">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>리치 캐러멜향</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>40ml</span>
+                            </div>    
+
+                            <span class="price">₩8,600</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">스타벅스&reg; 블론드 에스프레소 로스트</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/vertuo-espresso-coffee/vertuo-coffee10.avif" alt="vertuo-espresso10">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>부드러움 &amp; 달콤함</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>40ml</span>
+                            </div>    
+
+                            <span class="price">₩8,600</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            
+            <h5>더블 에스프레소 80ml</h5>
+
+            <section>
+                <article class="test">
+                    <div class="name">
+                        <a href="#">더블 에스프레소 키아로 디카페나토</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/vertuo-espresso-coffee/vertuo-double01.avif" alt="vertuo-double-espresso01">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>진하고 와일드한 풍미의 디카페인 커피</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 8</span>
+                                <span>80ml</span>
+                            </div>    
+
+                            <span class="price">₩9,100</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">액티브</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/vertuo-espresso-coffee/vertuo-double04.avif" alt="vertuo-double-espresso04">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>아이스로 즐기기 좋은 비타민 B6 함유 커피</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>80ml</span>
+                            </div>    
+
+                            <span class="price">₩11,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">진생 딜라이트</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/vertuo-espresso-coffee/vertuo-double05.avif" alt="vertuo-double-espresso05">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>인삼 추출물을 함유한 캐러멜향 커피</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>80ml</span>
+                            </div>    
+
+                            <span class="price">₩11,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">더블 에스프레소 돌체</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/vertuo-espresso-coffee/vertuo-double06.webp" alt="vertuo-double-espresso06">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>부드럽고 달콤한 캐러멜향</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 5</span>
+                                <span>80ml</span>
+                            </div>    
+
+                            <span class="price">₩8,700</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">더블 에스프레소 스쿠로</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/vertuo-espresso-coffee/vertuo-double07.avif" alt="vertuo-double-espresso07">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>진하고 강렬한 풍미</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 11</span>
+                                <span>80ml</span>
+                            </div>    
+
+                            <span class="price">₩8,700</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">더블 에스프레소 키아로</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/vertuo-espresso-coffee/vertuo-double08.webp" alt="vertuo-double-espresso08">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>진하고 와일드한 풍미</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 8</span>
+                                <span>80ml</span>
+                            </div>    
+
+                            <span class="price">₩8,700</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">비앙코 도피오 포 밀크</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/vertuo-espresso-coffee/vertuo-double09.avif" alt="vertuo-double-espresso09">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>우유와 어울리는 부드러움</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>80ml</span>
+                            </div>    
+
+                            <span class="price">₩8,700</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">아이스 레제로</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/vertuo-espresso-coffee/vertuo-double10.avif" alt="vertuo-double-espresso10">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>아이스로 좋은 과일향</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>아이스레시피</span>
+                                <span>80ml</span>
+                            </div>    
+
+                            <span class="price">₩8,700</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+            </section>   
+        </div>
+
+
+        <div class="vertuo-coffee-list tab-content" id="tab2">
+            <h5>에스프레소</h5>
+
+            <section>
+                <article class="test">
+                    <div class="name">
+                        <a href="#">카프리치오</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/original-coffee/original-espresso01.webp" alt="original-espresso01">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>깊고 조화로운 풍미와 섬세한 산미의 조화</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 5</span>
+                                <span>40ml</span>
+                            </div>    
+
+                            <span class="price">₩7,200</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">블루토</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/original-coffee/original-espresso02.avif" alt="original-espresso02">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>마일드하고 스윗한 풍미의 곡물향 커피</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 4</span>
+                                <span>40ml</span>
+                            </div>    
+
+                            <span class="price">₩7,200</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">코지</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/original-coffee/original-espresso03.avif" alt="original-espresso03">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>시트러스향과 곡물향의 조화</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 4</span>
+                                <span>40ml</span>
+                            </div>    
+
+                            <span class="price">₩7,200</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">블루토 디카페나토</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/original-coffee/original-espresso04.avif" alt="original-espresso04">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>마일드하고 스윗한 풍미의 곡물향 디카페인 커피</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 4</span>
+                                <span>40ml</span>
+                            </div>    
+
+                            <span class="price">₩7,500</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            
+            <h5>마스터 오리진</h5>
+
+            <section>
+                <article class="test">
+                    <div class="name">
+                        <a href="#">인디아</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/original-coffee/original-master01.webp" alt="original-master01">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>몬순 가공의 스파이시향</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 11</span>
+                                <span>110ml</span>
+                            </div>    
+
+                            <span class="price">₩8,600</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">인도네시아</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/original-coffee/original-master02.webp" alt="original-master02">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>습식탈곡 가공의 우디향</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 8</span>
+                                <span>110ml</span>
+                            </div>    
+
+                            <span class="price">₩8,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">콜롬비아</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/original-coffee/original-master03.webp" alt="original-master03">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>늦수확 가공의 와인향</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 6</span>
+                                <span>110ml</span>
+                            </div>    
+
+                            <span class="price">₩8,600</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">니카라과</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/original-coffee/original-master04.webp" alt="original-master04">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>블랙 허니 가공의 꿀향</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 5</span>
+                                <span>110ml</span>
+                            </div>    
+
+                            <span class="price">₩8,600</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">에티오피아</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/original-coffee/original-master05.avif" alt="original-master05">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>건식 가공의 꽃향</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 4</span>
+                                <span>110ml</span>
+                            </div>    
+
+                            <span class="price">₩11,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <h5>월드 익스플로레이션</h5>
+
+            <section>
+                <article class="test">
+                    <div class="name">
+                        <a href="#">파리</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/original-coffee/original-world01.avif" alt="original-world01">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>곡물향과 비스킷향의 균형잡힌 풍미</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 6</span>
+                                <span>40ml</span>
+                            </div>    
+
+                            <span class="price">₩7,500</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">이스탄불</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/original-coffee/original-world02.avif" alt="original-world02">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>로스팅향과 과일향의 조화로운 매력</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 8</span>
+                                <span>40ml</span>
+                            </div>    
+
+                            <span class="price">₩7,500</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">리우데자네이루</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/original-coffee/original-world03.avif" alt="original-world03">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>리우데자네이루를 닮은 허브향</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 9</span>
+                                <span>40ml</span>
+                            </div>    
+
+                            <span class="price">₩7,500</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">도쿄 룽고</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/original-coffee/original-world04.webp" alt="original-world04">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>섬세한 꽃향의 복합적인 풍미</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 6</span>
+                                <span>110ml</span>
+                            </div>    
+
+                            <span class="price">₩7,500</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">상하이 룽고</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/original-coffee/original-world05.webp" alt="original-world05">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>시트러스향과 베리향의 조화</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 5</span>
+                                <span>110ml</span>
+                            </div>    
+
+                            <span class="price">₩7,500</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">케이프타운 룽고</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/original-coffee/original-world06.avif" alt="original-world06">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>풍부한 바디감과 우디향의 강도 높은 커피</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 10</span>
+                                <span>110ml</span>
+                            </div>    
+
+                            <span class="price">₩7,500</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">스톡홀름 룽고</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/original-coffee/original-world07.webp" alt="original-world07">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>따뜻한 온기를 전하는 로스팅향 커피</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 8</span>
+                                <span>110ml</span>
+                            </div>    
+
+                            <span class="price">₩7,500</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">비엔나 룽고</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/original-coffee/original-world08.webp" alt="original-world08">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>우아한 밸런스의 맥아향 커피</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 6</span>
+                                <span>110ml</span>
+                            </div>    
+
+                            <span class="price">₩7,500</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                       <a href="#">부에노스 아이레스 룽고</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/original-coffee/original-world09.avif" alt="original-world09">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>캐러멜향과 곡물향의 스윗한 풍미</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 4</span>
+                                <span>110ml</span>
+                            </div>    
+
+                            <span class="price">₩7,500</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">비엔나 룽고 디카페나토</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/original-coffee/original-world10.avif" alt="original-world10">
+                        </a>
+                    </div>
+
+                    <div class="caption">
+                        <p>우아한 밸런스의 맥아향 디카페인 커피</p>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <div class="coffee">
+                                <span>강도 7</span>
+                                <span>110ml</span>
+                            </div>    
+
+                            <span class="price">₩7,800</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+
+
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-category category1">
+                <div class="footer-click">
+                    <h3>네스프레소</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="#">지속 가능성</a>
+                    <a href="#">채용</a>
+                    <a href="#">네스프레소 레시피</a>
+                    <a href="#">회사 소개</a>
+                </div>
+            </div>
+
+            <div class="footer-category category2">
+                <div class="footer-click">
+                    <h3>고객 서비스</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="#">머신 사용</a>
+                    <a href="#">배송 조회</a>
+                    <a href="#">주문 조회 / 취소</a>
+                    <a href="#">클럽 멤버 가입</a>
+                </div>
+            </div>
+
+            <div class="footer-category category3">
+                <div class="footer-click">
+                    <h3>문의</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="https://bizmessage.kakao.com/chat/open/@nespresso_club?extra=NPmobile&bot=true&event=start" target="_blank">카카오톡 상담</a>
+                    <a href="tel:0807341111" target="_blank">국내 전화</a>
+                    <a href="tel:+82232771398" target="_blank">국제 전화</a>
+                    <a href="https://www.nespresso.com/kr/ko/contactus" target="_blank">이메일 문의</a>
+                </div>
+            </div>
+
+            <div class="footer-category category4">
+                <div class="footer-click">
+                    <h3>SNS</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="https://www.instagram.com/nespresso.kr" target="_blank">인스타그램</a>
+                    <a href="https://www.youtube.com/user/nespresso" target="_blank">유튜브</a>
+                    <a href="https://www.twitter.com/nespresso" target="_blank">X</a>
+                    <a href="https://www.facebook.com/Nespresso" target="_blank">페이스북</a>
+                    <a href="https://www.pinterest.com/nespresso/" target="_blank">핀터레스트</a>
+                </div>
+            </div>
+
+            <div class="footer-category category4">
+                <div class="footer-click">
+                    <h3>약관·정책</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="#">판매이용약관</a>
+                    <a href="#" class="highlight">개인정보 처리방침</a>
+                    <a href="#">쿠키</a>
+                    <a href="#">사이트맵</a>
+                    <a href="#">웹 접근성</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-ex">
+            <div class="lan-box">
+                <form class="language">
+                    <select name="language" id="language">
+                        <option value="한국어">한국어</option>
+                        <option value="english">English</option>
+                    </select>
+                </form>
+            </div>
+
+            <div class="payment">
+                <img src="img/payment.png" alt="payment img">
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="txt">
+                <p>상호 : 네슬레코리아 유한책임회사</p>
+                <p>대표자 : 토마스제프리카소</p>
+            </div>
+
+            <div class="txt">
+                <p>사업자등록번호 : 110-86-10100</p>
+                <a href="#">통신판매업신고 : 2014-서울서대문-0247</a>
+            </div>
+
+            <div class="txt">
+                <a href="#">채무지급보증안내</a>
+                <a href="#">정보보호관리체계</a>
+                <a href="#">대표번호 : 080-734-1111</a>
+            </div>
+
+            <div class="txt">
+                <a href="#">이메일 : club.korea@nespresso.com</a>
+            </div>
+
+            <div class="txt">
+                <p><address>주소 : 서울시 서대문구 충정로70 웨스트게이트타워 10, 12, 16층</address></p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <div class="top-down">
+        <div class="topBtn">
+            <i class="xi-angle-up"></i><br>
+        </div>
+
+        <div class="downBtn">
+            <i class="xi-angle-down"></i>
+        </div>
+    </div>
+</body>
+
+
+</html>

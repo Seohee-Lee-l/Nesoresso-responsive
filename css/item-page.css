@@ -1,0 +1,1209 @@
+@charset "utf-8";
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "SUIT";
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* header */
+#header {
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    transition: all .4s ease;
+}
+
+#header .m-header {
+    width: 95%;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    transition: all .4s ease;
+}
+
+#header.on .m-header {
+    width: 95%;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    transition: all .4s ease;
+}
+
+#header .logo-img {
+    width: 45%;
+    margin-left: 10%;
+}
+
+#header .button-wrapper {
+    margin-right: 5%;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 0.3rem 0.5rem;
+    transition: all .3s ease;
+}
+
+#header.on .button-wrapper {
+    margin-right: 5%;
+    background: transparent;
+    backdrop-filter: none;
+    transition: all .3s ease;
+}
+
+#header button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+#header button:hover {
+    color: inherit;
+}
+
+
+/* mobile-menu */
+.menu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: rgba(255, 255, 255, 0.8);
+    width: 80%;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 99999;
+    backdrop-filter: blur(10px);
+}
+
+.menu .pc-close {
+    display: none;
+}
+
+.menu .close {
+    display: flex;
+    justify-content: right;
+    margin: 1rem 1rem 2rem;
+}
+
+.menu .close i {
+    cursor: pointer;
+    transition: all .4s;
+    font-size: 1.2rem;
+}
+
+.menu .close i:hover {
+    color: #3a7d7c;
+}
+
+.menu .main-menu {
+    text-indent: 3%;
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.menu .main-menu .main-sub {
+    border-bottom: 1px solid #555;
+    margin-top: 5%;
+}
+
+.menu .main-menu .menu-title {
+    color: #0a0a0a;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.menu .main-menu .menu-title i {
+    position: absolute;
+    right: 0;
+}
+
+.menu .main-menu a {
+    display: block;
+    position: relative;
+}
+
+
+.menu .main-menu .menu-title:hover {
+    color: #3a7d7c;
+    font-weight: bolder;
+}
+
+.menu .main-menu .menu-title:hover i {
+    color: #3a7d7c;
+}
+
+.menu .main-menu .sub-menu {
+    margin: 1rem;
+}
+
+.menu .main-menu .sub-menu a {
+    color: #0a0a0a;
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin-top: 1rem;
+    padding: 0.3rem 0.5rem;
+    transition: all .4s ease;
+}
+
+.menu .main-menu .sub-menu a:hover {
+    background: rgba(58, 125, 124, 0.3);
+    border-radius: 9px;
+}
+
+.menu .user {
+    margin: 1.3rem 1rem;
+}
+
+.menu .user a {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #0a0a0a;
+}
+
+.menu .user a:hover {
+    text-decoration: underline;
+}
+
+.menu .main-menu .sub-menu {
+    display: none;
+}
+
+.menu .main-menu .sub-menu.open {
+    display: block;
+}
+
+.menu {
+    right: -80%;
+}
+
+/* menu - modal */
+.menu-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    display: none;
+}
+
+
+/* search-form */
+.search-pop-down {
+    position: fixed;
+    left: 0;
+    top: -100%;
+    width: 100vw;
+    z-index: 99999;
+}
+
+.search-wrapper {
+    width: 95%;
+    margin: 0 auto;
+    z-index: 9999;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    height: 60px;
+    margin: 1rem auto;
+    display: flex;
+    align-items: center;
+}
+
+.search-wrapper .search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.search-wrapper .search-input input {
+    border: 1px solid transparent;
+    background: transparent;
+    width: 100%;
+    padding-bottom: 0.3rem;
+}
+
+.search-wrapper .search-input input::placeholder {
+    color: #555;
+    font-size: 0.9rem;
+    font-family: "SUIT";
+}
+
+.search-wrapper .search-icon button {
+    border: none;
+    background: transparent;
+    font-size: 1.2rem;
+    color: #555;
+    cursor: pointer;
+}
+
+.search-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    display: none;
+}
+
+.search-close {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.search-close button {
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    font-size: 1rem;
+    padding: 0.5rem 0.7rem;
+}
+
+.search-close button:hover {
+    color: #3a7d7c;
+    border-radius: 50%;
+}
+
+/* vertuo - coffee - quick menu */
+.vertuo-coffee {
+    position: fixed;
+    left: 0;
+    top: 12%;
+    width: 100%;
+    z-index: 999;
+}
+
+.vertuo-coffee .quick-menu {
+    width: 92%;
+    margin: 0 auto;
+    position: relative;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid transparent;
+    border-radius: 25px;
+}
+
+.vertuo-coffee .quick-menu ul {
+    display: flex;
+    justify-content: left;
+    gap: 20%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.vertuo-coffee .quick-menu ul li {
+    padding: 1%;
+}
+
+.vertuo-coffee .quick-menu ul li a {
+    color: #555;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.vertuo-coffee .quick-menu ul li .selected {
+    color: #0a0a0a;
+    font-weight: 500;
+}
+
+.vertuo-coffee .quick-menu ul li .non-selected:hover {
+    color: #3a7d7c;
+}
+
+/* vertuo coffee - option list */
+.pc-option {
+    display: none;
+}
+
+/* .option {display: flex; justify-content: left; align-items: center; gap: 3%; margin: 5% 2%; position: fixed; width: 100%; left: 0; top: 8%; z-index: 99;}
+.option form legend {font-size: 0.8rem; color: #555; font-weight: 300; margin-bottom: 0.2rem;}
+.option form select {width: 100%; border: 1px solid rgba(10, 10, 10, 0.3); padding: 2%; color: #0a0a0a;} */
+
+.option {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1%;
+    position: fixed;
+    left: 0;
+    top: 7.5%;
+    z-index: 999;
+}
+
+.option .option-wrapper {
+    width: 95%;
+    height: 30px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid transparent;
+    border-radius: 25px;
+}
+
+.option ul {
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    gap: 10%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.option ul li button {
+    color: #0a0a0a;
+    font-size: 0.7rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.option ul li .sub {
+    display: none;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(10, 10, 10, 0.1);
+    border-radius: 15px;
+    padding: 0.8rem;
+    margin-top: 0.8rem;
+    min-width: 160px;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.option ul li .sub li {
+    margin: 0.5rem 0;
+}
+
+.option ul li .sub a {
+    color: #0a0a0a;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    display: block;
+    padding: 0.3rem 0.5rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.option ul li .sub a:hover {
+    background: rgba(58, 125, 124, 0.1);
+    color: #3a7d7c;
+}
+
+.option ul li .sub a.selected {
+    font-weight: 500;
+    color: #3a7d7c;
+}
+
+.option ul li a:hover {
+    font-weight: 500;
+    color: #555;
+}
+
+/* vertuo coffee - espresso */
+.vertuo-coffee-list {
+    width: 100%;
+    margin: 3% auto;
+    padding-top: 27%;
+    transition: padding-top 0.3s ease;
+}
+
+.vertuo-coffee-list h5 {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #0a0a0a;
+    margin-bottom: 1rem;
+    margin-left: 1%;
+}
+
+.vertuo-coffee-list section {
+    padding: 20px;
+    width: 80%;
+    margin: 1rem auto;
+}
+
+.vertuo-coffee-list section article {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.tab-content section article .img {
+    overflow: hidden;
+}
+
+.vertuo-coffee-list .test {
+    border: 1px solid #0a0a0a;
+    overflow: hidden;
+}
+
+.vertuo-coffee-list .name {
+    border-bottom: 1px solid #0a0a0a;
+    padding: 1%;
+}
+
+.vertuo-coffee-list .name a {
+    font-size: 0.7rem;
+    color: #0a0a0a;
+}
+
+.vertuo-coffee-list .name a:hover {
+    text-decoration: underline;
+}
+
+.vertuo-coffee-list .caption {
+    font-size: 0.7rem;
+    color: #555;
+    border-bottom: 1px solid #000;
+    padding: 1%;
+}
+
+.vertuo-coffee-list .test .img {
+    border-bottom: 1px solid #0a0a0a;
+}
+
+.vertuo-coffee-list .test .img img {
+    display: block;
+    object-fit: cover;
+    transition: all .4s;
+    margin: 0 auto;
+    width: 70%;
+}
+
+.vertuo-coffee-list .test .img a:hover img {
+    transform: translateY(-6%);
+}
+
+.vertuo-coffee-list .test .img .acc {
+    width: 40%;
+}
+
+.vertuo-coffee-list .test .down {
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    align-items: center;
+}
+
+.vertuo-coffee-list .test .down .text .coffee span {
+    color: #3a7d7c;
+}
+
+.vertuo-coffee-list .test .down .text {
+    width: 60%;
+    display: flex;
+    gap: 10%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vertuo-coffee-list .test .down .text span {
+    color: #0a0a0a;
+    font-size: 0.7rem;
+    padding-right: 1rem;
+}
+
+.vertuo-coffee-list .test .down .btn {
+    width: 40%;
+}
+
+.vertuo-coffee-list .test .down .btn button {
+    width: 100%;
+    border: none;
+    border-left: 1px solid #0a0a0a;
+    background: transparent;
+    color: #0a0a0a;
+    font-size: 0.8rem;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.vertuo-coffee-list .test .down .btn button:hover {
+    background: #3a7d7c;
+    color: #faf8f5;
+}
+
+.vertuo-coffee-list .or-machine {
+    width: 50%;
+    height: auto;
+}
+
+.vertuo-coffee-list section article .coffee {
+    display: flex;
+    gap: 0.1rem;
+    margin-left: 0.1rem;
+}
+
+.vertuo-coffee-list section article .coffee .cb {
+    width: 10px;
+    height: 10px;
+}
+
+.vertuo-coffee-list .coffee .m1-color01 {
+    background: #e9e8e8;
+    border: 1px solid #e9e8e8;
+}
+
+.vertuo-coffee-list .coffee .m2-color01 {
+    background: #fff;
+    border: 1px solid rgba(10, 10, 10, 0.3);
+}
+
+.vertuo-coffee-list .coffee .m2-color02 {
+    background: #000;
+    border: 1px solid #000;
+}
+
+.vertuo-coffee-list .coffee .m2-color03 {
+    background: #333;
+    border: 1px solid #333;
+}
+
+.vertuo-coffee-list .coffee .m2-color04 {
+    background: #ff0000;
+    border: 1px solid #ff0000;
+}
+
+.vertuo-coffee-list .coffee .m3-color01 {
+    background: #e0dfdb;
+    border: 1px solid #e0dfdb;
+}
+
+.vertuo-coffee-list .coffee .m3-color02 {
+    background: #b6afa9;
+    border: 1px solid #b6afa9;
+}
+
+.vertuo-coffee-list .coffee .m3-color03 {
+    background: #e0dfdb;
+    border: 1px solid #e0dfdb;
+}
+
+.vertuo-coffee-list .coffee .m3-color04 {
+    background: #b6afa9;
+    border: 1px solid #b6afa9;
+}
+
+.vertuo-coffee-list .coffee .m4-color01 {
+    background: #fff;
+    border: 1px solid rgba(10, 10, 10, 0.3);
+}
+
+.vertuo-coffee-list .coffee .m4-color02 {
+    background: #000;
+    border: 1px solid #000;
+}
+
+.vertuo-coffee-list .coffee .m4-color03 {
+    background: #a50d24;
+    border: 1px solid #a50d24;
+}
+
+.vertuo-coffee-list .coffee .m5-color01 {
+    background: #000;
+    border: 1px solid #000;
+}
+
+.vertuo-coffee-list .coffee .m6-color01 {
+    background: #ff0000;
+    border: 1px solid #ff0000;
+}
+
+.vertuo-coffee-list .coffee .m7-color01 {
+    background: #e0dfdb;
+    border: 1px solid #e0dfdb;
+}
+
+.vertuo-coffee-list .coffee .v1-color01 {
+    background: #e9e0d2;
+    border: 1px solid #e9e0d2;
+}
+
+.vertuo-coffee-list .coffee .v1-color02 {
+    background: #e7abb7;
+    border: 1px solid #e7abb7;
+}
+
+.vertuo-coffee-list .coffee .v1-color03 {
+    background: #e4002b;
+    border: 1px solid #e4002b;
+}
+
+.vertuo-coffee-list .coffee .v2-color01 {
+    background: #ffa400;
+    border: 1px solid #ffa400;
+}
+
+.vertuo-coffee-list .coffee .v2-color02 {
+    background: #7ce0d3;
+    border: 1px solid #7ce0d3;
+}
+
+.vertuo-coffee-list .coffee .v2-color03 {
+    background: #7ba4bd;
+    border: 1px solid #7ba4bd;
+}
+
+.vertuo-coffee-list .coffee .v3-color01 {
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.vertuo-coffee-list .coffee .v3-color02 {
+    background: #000;
+    border: 1px solid #000;
+}
+
+.vertuo-coffee-list .coffee .v3-color03 {
+    background: #141517;
+    border: 1px solid #141517;
+}
+
+.vertuo-coffee-list .coffee .v4-color01 {
+    background: #857f7b;
+    border: 1px solid #857f7b;
+}
+
+.vertuo-coffee-list .coffee .v5-color01 {
+    background: #ccc;
+    border: 1px solid #ccc;
+}
+
+.vertuo-coffee-list .coffee .v5-color02 {
+    background: #adb2bd;
+    border: 1px solid #adb2bd;
+}
+
+.vertuo-coffee-list .coffee .v6-color01 {
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.vertuo-coffee-list .coffee .v6-color02 {
+    background: #222121;
+    border: 1px solid #222121;
+}
+
+/* footer */
+#footer {
+    width: 100%;
+    height: auto;
+    padding-top: 3%;
+}
+
+#footer .footer-container {
+    width: 95%;
+    margin: 1rem auto;
+}
+
+#footer .footer-container .footer-category {
+    margin-bottom: 1rem;
+}
+
+#footer .footer-container .footer-category .footer-click {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(10, 10, 10, 0.1);
+    transition: all 0.3s ease;
+}
+
+#footer .footer-container .footer-category .footer-click:hover {
+    background: rgba(58, 125, 124, 0.05);
+    padding-left: 0.5rem;
+}
+
+#footer .footer-container .footer-category .footer-click h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0a0a0a;
+    margin: 0;
+}
+
+#footer .footer-container .footer-category .footer-click i {
+    font-size: 1rem;
+    color: #3a7d7c;
+    transition: all 0.3s ease;
+}
+
+#footer .footer-container .footer-category .footer-txt {
+    width: 95%;
+    margin: 0 auto;
+    display: none;
+}
+
+#footer .footer-container .footer-category .footer-txt a {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: #555;
+    padding: 0.3rem 0;
+    transition: all 0.3s ease;
+}
+
+#footer .footer-container .footer-category .footer-txt a:hover {
+    color: #3a7d7c;
+    padding-left: 0.5rem;
+}
+
+#footer .footer-ex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(10, 10, 10, 0.3);
+    padding-bottom: 1rem;
+}
+
+#footer .footer-ex .lan-box {
+    width: 70%;
+}
+
+#footer .footer-ex .lan-box select {
+    width: 50%;
+}
+
+
+#footer .footer-ex .payment {
+    width: 30%;
+    display: flex;
+    justify-content: right;
+}
+
+#footer .footer-ex .payment img {
+    width: 60%;
+}
+
+#footer .footer-bottom .txt p, #footer .footer-bottom .txt address {
+    font-size: 0.6rem;
+    color: #555;
+}
+
+#footer .footer-bottom .txt a {
+    font-size: 0.7rem;
+    color: #464646;
+}
+
+.top-down {
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+}
+
+.topBtn, .downBtn {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    font-size: 0.7rem;
+    padding: 0.4rem;
+    cursor: pointer;
+    color: #333;
+    text-align: center;
+    vertical-align: middle;
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.3rem;
+}
+
+.topBtn:hover, .downBtn:hover {
+    background: rgba(255, 255, 255 ,0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0px;
+    color: #333;
+}
+
+@media screen and (min-width: 800px) and (max-width: 1199px) {
+    #header {
+        align-items: center;
+    }
+
+    #header button a {
+        font-size: 1.1rem;
+    }
+
+    #header img {
+        width: 60%;
+    }
+
+    /* .menu {right: 0;} */
+    .menu {
+        right: -80%;
+    }
+
+    .menu .sub-menu {
+        display: block;
+    }
+
+    .menu .close a {
+        font-size: 1.5rem;
+    }
+
+    .menu .main-menu {
+        margin-bottom: 1rem;
+    }
+
+    .menu .main-menu .menu-title {
+        font-size: 1.3rem;
+    }
+
+    .menu .main-menu .sub-menu a {
+        font-size: 1rem;
+    }
+
+    .menu .user a {
+        font-size: 1.1rem;
+    }
+
+    .vertuo-coffee {
+        top: 12%;
+    }
+
+    .vertuo-coffee-list {
+        padding-top: 15%;
+    }
+
+    .vertuo-coffee-list section {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1%;
+    }
+
+    .vertuo-coffee-list section article {
+        width: 45%;
+    }
+
+    .vertuo-coffee-list section article img {
+        width: 100%;
+    }
+
+    .vertuo-coffee-list h5 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #header {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #header a {
+        margin-left: 3%;
+    }
+
+    #header img {
+        width: 70%;
+    }
+
+    #header .right button a {
+        font-size: 1.2rem;
+        margin-right: 3%;
+    }
+
+    .vertuo-coffee .quick-menu {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .vertuo-coffee .quick-menu ul {
+        justify-content: right;
+        gap: 30%;
+    }
+
+    .menu {
+        width: 100%;
+        height: 70%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        top: -70%;
+        z-index: 99999;
+        background: rgba(255, 255, 255, 0.8);
+        border-left: none;
+    }
+
+    .menu .main-menu .main-sub {
+        border-bottom: none;
+    }
+
+    .menu > ul > li > a > i {
+        display: none;
+    }
+
+    .menu > ul {
+        display: flex;
+        justify-content: center;
+        margin-top: 3%;
+    }
+
+    .menu > ul > li {
+        width: 20%;
+        text-align: center;
+    }
+
+    .menu .main-sub .menu-title {
+        text-indent: 0;
+    }
+
+    .menu > ul > li > ul > li {
+        padding: 4% 0;
+    }
+
+    .menu .main-menu .menu-title {
+        font-size: 1.1rem;
+        font-weight: 400;
+    }
+
+    .menu .main-menu .menu-title:hover {
+        background: none;
+        color: #0a0a0a;
+        font-weight: normal;
+    }
+
+    .menu .main-menu .main-sub .sub-menu a {
+        font-size: 0.9rem;
+        transition: all .4s;
+    }
+
+    .menu .main-menu .main-sub .sub-menu a:hover {
+        background: none;
+        color: #3a7d7c;
+    }
+
+    .menu .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .menu .sub-menu {
+        display: block !important;
+    }
+
+    .menu .menu-title i {
+        display: none;
+    }
+
+    .menu-modal {
+        display: none !important;
+    }
+
+    /* .search-pop-down {display: block;} */
+    .search-pop-down {
+        height: 10vh;
+    }
+
+    .search-wrapper .saerch {
+        line-height: 10vh !important;
+    }
+
+    .search-wrapper .search-input input::placeholder {
+        font-size: 1rem;
+    }
+
+    .search-wrapper .search-icon button {
+        font-size: 1.3rem;
+    }
+
+    .option {
+        display: none;
+    }
+
+    .vertuo-coffee {
+        top: 8%;
+    }
+
+    .pc-option {
+        position: fixed;
+        width: 15%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        left: 0;
+        top: 0;
+        border-right: 1px solid rgba(10, 10, 10, 0.3);
+        padding-top: 10%;
+        display: block;
+    }
+
+    .pc-option.stop {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+    }
+
+    .pc-option ul {
+        margin-bottom: 15%;
+        margin-left: 5%;
+    }
+
+    .pc-option button {
+        border: none;
+        background: transparent;
+        font-size: 1rem;
+        font-weight: 400;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        display: block;
+    }
+
+    .pc-option button a {
+        color: #0a0a0a;
+    }
+
+    .pc-option button:hover a {
+        color: #3a7d7c;
+    }
+
+    .pc-option .sub-option li {
+        margin-bottom: 1rem;
+    }
+
+    .pc-option .sub-option .selected {
+        color: #0a0a0a;
+        font-weight: 400;
+    }
+
+    .pc-option .sub-option li a {
+        color: #555;
+        font-size: 0.8rem;
+        font-weight: 300;
+        display: block;
+    }
+
+    .pc-option .sub-option li a:hover {
+        color: #0a0a0a;
+        font-weight: 400;
+    }
+
+    .wrapper {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .vertuo-coffee-list {
+        flex: 1 1 auto;
+        max-width: 85%;
+        margin-left: 15%;
+        padding-top: 0;
+        margin-top: 8%;
+    }
+
+    .vertuo-coffee-list section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 2%;
+        width: 100%;
+    }
+
+    .vertuo-coffee-list section article {
+        width: 30%;
+        margin-bottom: 2rem;
+    }
+
+    .vertuo-coffee-list .test .img {
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .vertuo-coffee-list .test .img .or-machine {
+        width: 40%;
+        height: 100%;
+    }
+
+    .vertuo-coffee-list .test .img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .vertuo-coffee-list h5 {
+        font-size: 1.2rem;
+    }
+
+    #footer .footer-ex {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    #footer .footer-ex .lan-box select {
+        width: 35%;
+        padding: 0.2rem;
+    }
+
+    #footer .footer-ex .payment img {
+        width: 40%;
+    }
+
+    #footer .footer-bottom {
+        width: 99%;
+        margin: 0.3rem auto;
+    }
+
+    #footer .footer-bottom a:hover {
+        color: #3a7d7c;
+    }
+
+    /* search - PC 버전 검색창 길게 만들기 */
+    .search-pop-down .search-wrapper .search {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .search-pop-down .search-wrapper .search .search-form {
+        width: 80%;
+    }
+    
+    .search-pop-down .search-wrapper .search .search-input {
+        width: 100%;
+    }
+    
+    .search-pop-down .search-wrapper .search .search-input input {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .search-pop-down .search-wrapper .search .search-icon {
+        flex-shrink: 0;
+    }
+}

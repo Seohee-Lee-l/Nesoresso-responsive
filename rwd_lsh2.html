@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nespresso</title>    
+    <link rel="icon" href="">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/rwd_lsh2.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/xeicon/2/xeicon.min.css">
+    <link rel="stylesheet" href="font/SUIT-woff2 (1)/SUIT.css">
+    <link rel="stylesheet" href="css/animation.css">
+
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery.js"></script>
+</head>
+
+
+<body>
+    <header id="header">
+        <div class="m-header">
+            <a href="rwd_lsh2.html"><img src="img/nespresso-wordmark-black.png" alt="header-logo" class="logo-img"></a>
+
+            <div class="button-wrapper">
+                <button id="search-btn"><i class="xi-search"></i></button>
+                <button id="menu-btn"><i class="xi-bars"></i></button>   
+            </div>
+        </div>
+    </header>
+
+    <div class="menu" id="nav-menu">
+        <div class="close">
+            <i class="xi-close"></i>
+        </div>
+
+        <ul class="main-menu">
+            <li class="main-sub">
+                <a href="vertuo-coffee.html" class="menu-title">
+                커피
+                <i class="xi-plus-thin"></i>
+                </a>
+                
+                <ul class="sub-menu">
+                    <li><a href="vertuo-coffee.html">버츄오 커피</a></li>
+                    <li><a href="vertuo-coffee.html">오리지널 커피</a></li>
+                    <li><a href="#">내 취향 커피 찾기</a></li>
+                </ul>
+            </li>
+
+            <li class="main-sub">
+                    <a href="vertuo-machine.html" class="menu-title">머신 <i class="xi-plus-thin"></i></a>
+
+                <ul class="sub-menu">
+                    <li><a href="vertuo-machine.html">버츄오 머신</a></li>
+                    <li><a href="vertuo-machine.html">오리지널 머신</a></li>
+                    <li><a href="#">버츄오 / 오리지널 머신 비교</a></li>
+                </ul>
+            </li>
+
+            <li class="main-sub">
+                <a href="#" class="menu-title">액세서리 <i class="xi-plus-thin"></i></a>
+
+                <ul class="sub-menu">
+                    <li><a href="vertuo-acc.html">버츄오 액세서리</a></li>
+                    <li><a href="vertuo-acc.html">오리지널 액세서리</a></li>
+                    <li><a href="acc-milk.html">우유 거품기</a></li>
+                    <li><a href="vertuo-acc.html">푸드 & 바이트</a></li>
+                    <li><a href="#">머신 부속품</a></li>
+                </ul>
+            </li>
+
+            <li class="main-sub">
+                <a href="#" class="menu-title">정품 등록 <i class="xi-plus-thin"></i></a>
+
+                <ul class="sub-menu">
+                    <li><a href="#">정품 등록 안내</a></li>
+                    <li><a href="#">보증 기간 안내</a></li>
+                </ul>
+            </li>
+
+            <li class="main-sub">
+                <a href="#" class="menu-title">프로페셔널<i class="xi-plus-thin"></i></a>
+
+                <ul class="sub-menu">
+                    <li><a href="#">기업용 커피</a></li>
+                    <li><a href="#">기업용 머신</a></li>
+                </ul>
+            </li>
+        </ul>
+        
+        <div class="user">
+            <!-- <a href="login.html">로그인</a> -->
+            <?php 
+                session_start();
+                include "top_login.php"; 
+            ?>
+            <a href="cart.html">장바구니</a>
+        </div>
+
+        <div class="pc-close">
+            <button><i class="xi-close"></i></button>
+        </div>
+    </div>
+
+    <div class="menu-modal"></div>
+    
+    <div class="search-pop-down" id="search-bar">
+        <div class="search-wrapper">
+            <div class="search">
+                <form class="search-form">
+                    <div class="search-input">
+                        <input type="search" name="search" id="search_input" placeholder="Search...">
+                    </div>
+                </form>
+
+                <div class="search-icon">
+                    <button><i class="xi-search"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-close">
+            <button>
+                <i class="xi-close"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="search-modal"></div>
+
+    <div class="m-main">
+        <div id="main_image">
+            <ul>
+                <li>
+                    <img src="img/main01-2.png" alt="slide1" data-pc="img/main01-pc.png" data-mobile="img/main01-2.png">
+                
+                    <div class="caption">
+                        <h3><span>블루보틀</span> 블렌드 No.2</h3>
+                        <p>균형 잡힌 바디감의 조화로운 한 잔</p>
+                    </div>
+                </li>
+
+                <li>
+                    <img src="img/main02-2.png" alt="slide2" data-pc="img/main02-pc.png" data-mobile="img/main02-2.png">
+
+                    <div class="caption">
+                        <h3>우리 집이 <span class='stcolor'>스타벅스</span>가 되는 순간</h3>
+                        <p>네스프레소와 스타벅스의 만남</p>
+                    </div>
+                </li>
+
+                <li>
+                    <img src="img/main03-2.png" alt="slide3" data-pc="img/main03-pc.png" data-mobile="img/main03-2.png">
+
+                    <div class="caption">
+                        <h3 class="color">비즈니스 공간을 특별하게</h3>
+                        <p>네스프레소 30년 블렌딩 노하우 <br> 네스프레소 프로페셔널</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div id="book_roll">
+            <div class="indicator-on indicator"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+        </div>
+    </div>
+
+    <nav class="quick-menu">
+        <div class="quick-wrapper">
+            <ul>
+                <li><a href="#tab1" class="selected">커피</a></li>
+                <li><a href="#tab2">머신</a></li>
+                <li><a href="#tab3">액세서리</a></li>
+                <li><a href="cart.html">장바구니 (0)</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <section id="tab1" class="tab-content">
+        <h4><a href="vertuo-coffee.html" class="title">VERTUO</a></h4>
+        
+        <div class="vertuo">
+            <article class="mobile">
+                <a href="item_vivida.html"><img src="img/starbucks-01.avif" alt="vertuo-coffee-1"></a>
+
+                <p class="c-name">스타벅스&reg; 에스프레소 로스트</p>
+                <p><small class="c-caption">인텐스하고 캐러멜처럼 달콤한 커피</small></p>
+                <p class="c-price">₩8,600</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile">
+                <a href="#"><img src="img/vertuo6.avif" alt="vertuo-coffee-2"></a>
+
+                <p class="c-name">더블 에스프레소 돌체</p>
+                <p><small class="c-caption">부드럽고 달콤한 곡물향</small></p>
+                <p class="c-price">₩8,700</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile">
+                <a href="#"><img src="img/vertuo7.avif" alt="vertuo-coffee-3"></a>
+
+                <p class="c-name">비양코 도피오 포 밀크</p>
+                <p><small class="c-caption">우유와 어울리는 부드러움</small></p>
+                <p class="c-price">₩8,700</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile">
+                <a href="#"><img src="img/vertuo8.avif" alt="vertuo-coffee-4"></a>
+
+                <p class="c-name">아이스 레제로</p>
+                <p><small class="c-caption">향긋한 과일향의 산뜻한 아이스 커피</small></p>
+                <p class="c-price">₩8,700</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile tablet">
+                <a href="#"><img src="img/vertuo9.avif" alt="vertuo-coffee-5"></a>
+
+                <p class="c-name">스타벅스&reg; 파이크 플레이스 로스트</p>
+                <p><small class="c-caption">부드러운 초콜릿향</small></p>
+                <p class="c-price">₩9,200</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile tablet">
+                <a href="#"><img src="img/vertuo10.avif" alt="vertuo-coffee-6"></a>
+
+                <p class="c-name">스타벅스&reg; 베란다 블렌드</p>
+                <p><small class="c-caption">구운 맥아 &reg; 베이킹 초콜릿향</small></p>
+                <p class="c-price">₩9,100</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile pc">
+                <a href="#"><img src="img/vertuo11.avif" alt="vertuo-coffee-7"></a>
+
+                <p class="c-name">스타벅스&reg; 스무스 캐러멜향</p>
+                <p><small class="c-caption">버터리 캐러멜 &reg; 바닐라향</small></p>
+                <p class="c-price">₩10,400</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile pc">
+                <a href="#"><img src="img/vertuo12.avif" alt="vertuo-coffee-8"></a>
+
+                <p class="c-name">코스타리카</p>
+                <p><small class="c-caption">온천수 가공의 맥아향</small></p>
+                <p class="c-price">₩10,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+        </div>
+
+        <div class="more">
+            <button class="more">+ More</button>
+        </div>
+
+        <h4><a href="vertuo-coffee.html" class="title">ORIGINAL</a></h4>
+        <div class="original">
+            <article class="mobile">
+                <a href="#"><img src="img/original1.avif" alt="original-coffee-1"></a>
+
+                <p class="c-name">카페 플로리안 커피</p>
+                <p><small class="c-caption">시대를 초월한 전설적인 카페 경험</small></p>
+                <p class="c-price">₩8,500</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile">
+                <a href="#"><img src="img/original2.avif" alt="original-coffee-2"></a>
+
+                <p class="c-name">프레도 델리카토</p>
+                <p><small class="c-caption">향긋한 과일향의 산뜻한 아이스 커피</small></p>
+                <p class="c-price">₩7,900</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile">
+                <a href="#"><img src="img/original3.avif" alt="original-coffee-3"></a>
+
+                <p class="c-name">리스트레토 디카페나토</p>
+                <p><small class="c-caption">로스팅향과 베리향이 조화로운 디카페인</small></p>
+                <p class="c-price">₩7,500</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile">
+                <a href="#"><img src="img/original4.avif" alt="original-coffee-4"></a>
+
+                <p class="c-name">카프리치오</p>
+                <p><small class="c-caption">깊고 조화로운 풍미와 섬세한 산미의 조화</small></p>
+                <p class="c-price">₩7,200</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile tablet">
+                <a href="#"><img src="img/original5.avif" alt="original-coffee-5"></a>
+
+                <p class="c-name">도쿄 룽고</p>
+                <p><small class="c-caption">섬세한 꽃향에 로스팅향의 부드러운 조화</small></p>
+                <p class="c-price">₩7,500</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile tablet">
+                <a href="#"><img src="img/original6.avif" alt="original-coffee-6"></a>
+
+                <p class="c-name">인디아</p>
+                <p><small class="c-caption">우디향의 여운이 남는 스파이시향 커피</small></p>
+                <p class="c-price">₩8,600</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile pc">
+                <a href="#"><img src="img/original7.avif" alt="original-coffee-7"></a>
+
+                <p class="c-name">초콜릿향* 커피</p>
+                <p><small class="c-caption">나를 채우는 풍성한 만족감을 주는 커피</small></p>
+                <p class="c-price">₩8,600</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile pc">
+                <a href="#"><img src="img/original8.avif" alt="original-coffee-8"></a>
+
+                <p class="c-name">스쿠로</p>
+                <p><small class="c-caption">우유와 어울리는 로스팅향 커피</small></p>
+                <p class="c-price">₩7,500</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+        </div>
+        <div class="more">
+            <button class="more">+ More</button>
+        </div>
+    </section>
+
+
+
+    <section id="tab2" class="tab-content">
+        <h4><a href="vertuo-machine.html" class="title">VERTUO</a></h4>
+        <div class="vertuo">
+
+            <article class="mobile">
+                <a href="item_vertuo-pop.html"><img src="img/vertuo-machine/vertuo-machine01.avif" alt="vertuo-machine-1"></a>
+
+                <p class="c-name">버츄오 팝 코코넛 화이트 </p>
+                <p><small class="c-caption">비비드한 컬러 &amp; 컴팩트한 사이즈</small></p>
+                <p class="c-price">₩199,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile">
+                <a href="item_vertuo-pop.html"><img src="img/vertuo-machine/vertuo-machine01-2.avif" alt="vertuo-machine-2"></a>
+
+                <p class="c-name">버츄오 팝 망고 옐로우</p>
+                <p><small class="c-caption">비비드한 컬러 &amp; 컴팩트한 사이즈</small></p>
+                <p class="c-price">₩199,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile">
+                <a href="#"><img src="img/vertuo-machine/vertuo-machine02.avif" alt="vertuo-machine-3"></a>
+
+                <p class="c-name">버츄오 플러스 화이트</p>
+                <p><small class="c-caption">자동 오픈 헤드로 프리미엄하게</small></p>
+                <p class="c-price">₩299,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile">
+                <a href="#"><img src="img/vertuo-machine/vertuo-machine03.avif" alt="vertuo-machine-4"></a>
+
+                <p class="c-name">버츄오 팝+ 타이탄</p>
+                <p><small class="c-caption">작은 크기에 편리함을 더하다</small></p>
+                <p class="c-price">₩239,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile tablet">
+                <a href="#"><img src="img/vertuo-machine/vertuo-machine05.avif" alt="machine-5"></a>
+
+                <p class="c-name">버츄오 크리아티스타 화이트</p>
+                <p><small class="c-caption">하이엔드 라테 바리스타</small></p>
+                <p class="c-price">₩1,100,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+        </div>
+
+        <div class="more">
+            <button>+ More</button>
+        </div>
+
+        <h4><a href="vertuo-machine.html" class="title">ORIGINAL</a></h4>
+        <div class="original">
+            <article class="mobile">
+                <a href="#"><img src="img/original-machine/original-machine1.avif" alt="original-machine-1"></a>
+
+                <p class="c-name">그랑 라티시마 F531 화이트</p>
+                <p><small class="c-caption">버튼 하나로 즐기는 프리미엄 블랙 커피와 6가지 밀크 레시피</small></p>
+                <p class="c-price">₩449,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile">
+                <a href="#"><img src="img/original-machine/original-machine2.avif" alt="original-machine-2"></a>
+
+                <p class="c-name">에센자 미니 C30 화이트</p>
+                <p><small class="c-caption">작아진 크기, 그 이상의 커피 경험</small></p>
+                <p class="c-price">₩219,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile">
+                <a href="#"><img src="img/original-machine/original-machine3.png" alt="original-machine-3"></a>
+
+                <p class="c-name">시티즈 플래티넘 D 스테인리스 스틸</p>
+                <p><small class="c-caption">에스프레소부터 아메리카노까지 다양한 커피</small></p>
+                <p class="c-price">₩349,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile">
+                <a href="#"><img src="img/original-machine/original-machine4.avif" alt="original-machine-4"></a>
+
+                <p class="c-name">시티즈 D113 화이트</p>
+                <p><small class="c-caption">모던한 디자인과 클래식한 커피 경험</small></p>
+                <p class="c-price">₩299,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile tablet">
+                <a href="#"><img src="img/original-machine/original-machine5.avif" alt="original-machine-5"></a>
+
+                <p class="c-name">라티시마 원 F121 블랙</p>
+                <p><small class="c-caption">프리미엄 블랙커피와 3가지 밀크 레시피</small></p>
+                <p class="c-price">₩419,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile tablet">
+                <a href="#"><img src="img/original-machine/original-machine6.png" alt="original-machine-6"></a>
+
+                <p class="c-name">픽시 C61 일렉트릭 레드</p>
+                <p><small class="c-caption">인더스트리얼 감성 속 섬세한 커피 경험</small></p>
+                <p class="c-price">₩249,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile pc">
+                <a href="#"><img src="img/original-machine/original-machine7.avif" alt="original-machine-7"></a>
+
+                <p class="c-name">크리아티스타 플러스 스테인리스 스틸</p>
+                <p><small class="c-caption">홈 바리스타를 위한 라테 전문 커피 머신</small></p>
+                <p class="c-price">₩900,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+        </div>
+        <div class="more">
+            <button>+ More</button>
+        </div>
+    </section>
+
+
+
+    <section id="tab3" class="tab-content">
+        <h4><a href="vertuo-acc.html" class="title">VERTUO</a></h4>
+        <div class="vertuo">
+
+            <article class="mobile">
+                <a href="#"><img src="img/acc-vertuo-cap01.avif" alt="acc-vertuo01"></a>
+
+                <p class="c-name">네스프레소 캡슐 스테이션</p>
+                <p class="c-price">₩89,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile">
+                <a href="#"><img src="img/acc-vertuo-cap02.avif" alt="acc-vertuo02"></a>
+
+                <p class="c-name">버츄오 버티컬 디스펜서</p>
+                <p class="c-price">₩55,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile">
+                <a href="#"><img src="img/acc-vertuo-cap03.png" alt="acc-vertuo03"></a>
+
+                <p class="c-name">뷰 큐브</p>
+                <p class="c-price">₩41,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile">
+                <a href="#"><img src="img/acc-vertuo-cap04.png" alt="acc-vertuo04"></a>
+
+                <p class="c-name">뷰 봉보니에르</p>
+                <p class="c-price">₩39,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile tablet">
+                <a href="#"><img src="img/acc-vertuo-cap05.avif" alt="acc-vertuo05"></a>
+
+                <p class="c-name">미아 디스펜서 미디엄</p>
+                <p class="c-price">₩46,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile tablet">
+                <a href="#"><img src="img/acc-vertuo-travel01.avif" alt="acc-vertuo06"></a>
+
+                <p class="c-name">트래블 텀블러 (피스타치오)</p>
+                <p class="c-price">₩28,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile pc">
+                <a href="#"><img src="img/acc-vertuo-travel02.avif" alt="acc-vertuo06"></a>
+
+                <p class="c-name">트래블 머그 미디엄 (바닐라 아이스)</p>
+                <p class="c-price">₩35,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile pc">
+                <a href="#"><img src="img/acc-vertuo-travel03.avif" alt="acc-vertuo06"></a>
+
+                <p class="c-name">트래블 머그 라지 (스모키 블루)</p>
+                <p class="c-price">₩39,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+        </div>
+
+        <div class="more">
+            <button>+ More</button>
+        </div>
+
+        <h4><a href="vertuo-acc.html" class="title">ORIGINAL</a></h4>
+        <div class="original">
+            <article class="mobile">
+                <a href="#"><img src="img/acc-vertuo-milk01.avif" alt="acc-original01"></a>
+
+                <p class="c-name">에어로치노4</p>
+                <p class="c-price">₩149,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile">
+                <a href="#"><img src="img/acc-vertuo-milk02.png" alt="acc-original02"></a>
+
+                <p class="c-name">에어로치노3 블랙</p>
+                <p class="c-price">₩135,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile">
+                <a href="#"><img src="img/acc-vertuo-milk03.png" alt="acc-original03"></a>
+
+                <p class="c-name">에어로치노3 화이트</p>
+                <p class="c-price">₩135,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile">
+                <a href="#"><img src="img/vertuo-machine/vertuo-barista1.png" alt="acc-original04"></a>
+
+                <p class="c-name">바리스타 레시피 메이커</p>
+                <p class="c-price">₩259,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile tablet">
+                <a href="#"><img src="img/acc-vertuo-travel04.png" alt="acc-original05"></a>
+
+                <p class="c-name">트래블 머그 터치</p>
+                <p class="c-price">₩30,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile tablet">
+                <a href="#"><img src="img/acc-vertuo-travel05.avif" alt="acc-original06"></a>
+
+                <p class="c-name">트래블 머그 스몰 (시티 선 옐로우)</p>
+                <p class="c-price">₩30,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile pc">
+                <a href="#"><img src="img/acc-vertuo-travel06.avif" alt="acc-original07"></a>
+
+                <p class="c-name">트래블 머그 스몰 (세이지 그린)</p>
+                <p class="c-price">₩30,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article class="mobile pc">
+                <a href="#"><img src="img/acc-vertuo11.avif" alt="acc-original08"></a>
+
+                <p class="c-name">바리스타 레시피 글라스 세트 스몰</p>
+                <p class="c-price">₩30,000</p>
+
+                <div class="btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+        </div>
+        <div class="more">
+            <button>+ More</button>
+        </div>
+    </section>
+
+
+    <div class="col">
+        <div class="bluebottle">
+            <div class="col-img bluebottleImg">
+
+                <div class="over-text">
+                    <h4>네스프레소 X 블루보틀</h4>
+                    <button class="colBtn blueBtn">자세히 보기</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="florian">
+            <div class="col-img florianImg">
+
+                <div class="over-text">
+                    <h4>카페 플로리안 커피</h4>
+                    <button class="colBtn florianBtn">자세히 보기</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="starbucks">
+            <div class="col-img starbucksImg">
+
+                <div class="over-text">
+                    <h4>스타벅스&reg; by 네스프레소 버츄오</h4>
+                    <button class="colBtn starbucksBtn">자세히 보기</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="coffee-letter">
+            <div class="col-img letterImg">
+
+                <div class="over-text">
+                    <h4>네스프레소 커피 레터</h4>
+                    <button class="colBtn letterBtn">자세히 보기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="new">
+        <h4>NEW 디카페인</h4>
+
+        <h5>VERTUO</h5>
+        <div class="d-vertuo">
+            <article>
+                <a href="#"><img src="img/vertuo-decaf01.webp" alt="vertuo-decaf01"></a>
+
+                <p class="d-name">더블 에스프레소 키아로 디카페나토</p>
+                <p class="d-price">₩9,100</p>
+
+                <div class="d-btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article>
+                <a href="#"><img src="img/vertuo-decaf02.webp" alt="vertuo-decaf02"></a>
+
+                <p class="d-name">스위트 바닐라향 &#42; 커피</p>
+                <p class="d-price">₩11,500</p>
+
+                <div class="d-btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article>
+                <a href="#"><img src="img/vertuo-decaf03.webp" alt="vertuo-decaf03"></a>
+
+                <p class="d-name">멜로지오 디카페나토</p>
+                <p class="d-price">₩10,500</p>
+
+                <div class="d-btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article>
+                <a href="#"><img src="img/vertuo-decaf04.webp" alt="vertuo-decaf04"></a>
+
+                <p class="d-name">포르타도 디카페나토</p>
+                <p class="d-price">₩9,700</p>
+
+                <div class="d-btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+        </div>
+
+
+        <h5>ORIGINAL</h5>
+        <div class="d-original">
+            <article>
+                <a href="#"><img src="img/original-decaf01.webp" alt="original-decaf01"></a>
+
+                <p class="d-name">비엔나 룽고 디카페나토</p>
+                <p class="d-price">₩7,800</p>
+
+                <div class="d-btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article>
+                <a href="#"><img src="img/original-decaf06.webp" alt="original-decaf02"></a>
+
+                <p class="d-name">볼루토 디카페나토</p>
+                <p class="d-price">₩7,500</p>
+
+                <div class="d-btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article>
+                <a href="#"><img src="img/original-decaf07.webp" alt="original-decaf03"></a>
+
+                <p class="d-name">아르페지오 디카페나토</p>
+                <p class="d-price">₩7,500</p>
+
+                <div class="d-btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article>
+                <a href="#"><img src="img/original-decaf08.webp" alt="original-decaf04"></a>
+
+                <p class="d-name">리스트레토 디카페나토</p>
+                <p class="d-price">₩7,500</p>
+
+                <div class="d-btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+
+    <section id="machine-section">
+        <h3>페이백 오리지널 머신</h3>
+        
+        <div class="original-machine">
+            <article>
+                <a href="original-machine.html">
+                    <img src="img/original-payback04.png" alt="original-machine1">
+
+                    <p class="m-name">에센자 미니 C30 화이트</p>
+                </a>
+                <p class="m-price">₩219,000</p>
+            
+                <div class="m-btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article>
+                <a href="original-machine.html">
+                    <img src="img/original-payback07.png" alt="original-machine2">
+
+                    <p class="m-name">픽시 C51 일렉트릭 레드</p>
+                </a>
+                <p class="m-price">₩249,000</p>
+
+                <div class="m-btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article>
+                <a href="original-machine.html">
+                    <img src="img/original-payback02.png" alt="original-machine3">
+
+                    <p class="m-name">시티즈 D113 화이트</p>
+                </a>
+                <p class="m-price">₩299,000</p>
+
+                <div class="m-btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article>
+                <a href="original-machine.html">
+                    <img src="img/original-payback01.png" alt="original-machine4">
+
+                    <p class="m-name">시티즈 플래티넘 D 스테인리스 스틸</p>
+                </a>
+                <p class="m-price">₩349,000</p>
+
+                <div class="m-btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article>
+                <a href="original-machine.html">
+                    <img src="img/original-payback05.png" alt="original-machine5">
+
+                    <p class="m-name">라티시마 원 F121 블랙</p>
+                </a>
+                <p class="m-price">₩419,000</p>
+
+                <div class="m-btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article>
+                <a href="original-machine.html">
+                    <img src="img/original-payback03.png" alt="original-machine6">
+
+                    <p class="m-name">그랑 라티시마 F531 화이트</p>
+                </a>
+                <p class="m-price">₩449,000</p>
+
+                <div class="m-btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+
+            <article>
+                <a href="original-machine.html">
+                    <img src="img/original-payback06.png" alt="original-machine7">
+
+                    <p class="m-name">크리아티스타 플러스 스테인리스 스틸</p>
+                </a>
+                <p class="m-price">₩900,000</p>
+
+                <div class="m-btn">
+                    <button>장바구니</button>
+                </div>
+            </article>
+        </div>
+
+        <div class="payback-link">
+            <a href="#">페이백 혜택 자세히 보기</a>
+        </div>
+    </section>
+
+
+    <div class="use-info">
+        <div class="club">
+            <p class="u-title">클럽 멤버 혜택</p>
+            <p class="u-caption">네스프레소 회원 혜택</p>
+            <a href="#">자세히 알아보기</a>
+        </div>
+
+        <div class="machine">
+            <p class="u-title">오리지널 VS 버츄오</p>
+            <p class="u-caption">머신 비교하기</p>
+            <a href="#">자세히 알아보기</a>
+        </div>
+
+        <div class="online">
+            <p class="u-title">온라인 마스터 클래스</p>
+            <p class="u-caption">네스프레소 클래스</p>
+            <a href="#">자세히 알아보기</a>
+        </div>
+
+        <div class="app">
+            <p class="u-title">앱 다운로드</p>
+            <p class="u-caption">주문 ~ 결제를 간편하게</p>
+            <a href="#">자세히 알아보기</a>
+        </div>
+
+        <div class="capsule">
+            <p class="u-title">캡슐 재활용</p>
+            <p class="u-caption">재활용 백 주문/수거 신청</p>
+            <a href="#">신청하기</a>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-category category1">
+                <div class="footer-click">
+                    <h3>네스프레소</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="#">지속 가능성</a>
+                    <a href="#">채용</a>
+                    <a href="#">네스프레소 레시피</a>
+                    <a href="#">회사 소개</a>
+                </div>
+            </div>
+
+            <div class="footer-category category2">
+                <div class="footer-click">
+                    <h3>고객 서비스</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="#">머신 사용</a>
+                    <a href="#">배송 조회</a>
+                    <a href="#">주문 조회 / 취소</a>
+                    <a href="#">클럽 멤버 가입</a>
+                </div>
+            </div>
+
+            <div class="footer-category category3">
+                <div class="footer-click">
+                    <h3>문의</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="https://bizmessage.kakao.com/chat/open/@nespresso_club?extra=NPmobile&bot=true&event=start" target="_blank">카카오톡 상담</a>
+                    <a href="tel:0807341111" target="_blank">국내 전화</a>
+                    <a href="tel:+82232771398" target="_blank">국제 전화</a>
+                    <a href="https://www.nespresso.com/kr/ko/contactus" target="_blank">이메일 문의</a>
+                </div>
+            </div>
+
+            <div class="footer-category category4">
+                <div class="footer-click">
+                    <h3>SNS</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="https://www.instagram.com/nespresso.kr" target="_blank">인스타그램</a>
+                    <a href="https://www.youtube.com/user/nespresso" target="_blank">유튜브</a>
+                    <a href="https://www.twitter.com/nespresso" target="_blank">X</a>
+                    <a href="https://www.facebook.com/Nespresso" target="_blank">페이스북</a>
+                    <a href="https://www.pinterest.com/nespresso/" target="_blank">핀터레스트</a>
+                </div>
+            </div>
+
+            <div class="footer-category category4">
+                <div class="footer-click">
+                    <h3>약관·정책</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="#">판매이용약관</a>
+                    <a href="#" class="highlight">개인정보 처리방침</a>
+                    <a href="#">쿠키</a>
+                    <a href="#">사이트맵</a>
+                    <a href="#">웹 접근성</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-ex">
+            <div class="lan-box">
+                <form class="language">
+                    <select name="language" id="language">
+                        <option value="한국어">한국어</option>
+                        <option value="english">English</option>
+                    </select>
+                </form>
+            </div>
+
+            <div class="payment">
+                <img src="img/payment.png" alt="payment img">
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="txt">
+                <p>상호 : 네슬레코리아 유한책임회사</p>
+                <p>대표자 : 토마스제프리카소</p>
+            </div>
+
+            <div class="txt">
+                <p>사업자등록번호 : 110-86-10100</p>
+                <a href="#">통신판매업신고 : 2014-서울서대문-0247</a>
+            </div>
+
+            <div class="txt">
+                <a href="#">채무지급보증안내</a>
+                <a href="#">정보보호관리체계</a>
+                <a href="#">대표번호 : 080-734-1111</a>
+            </div>
+
+            <div class="txt">
+                <a href="#">이메일 : club.korea@nespresso.com</a>
+            </div>
+
+            <div class="txt">
+                <p><address>주소 : 서울시 서대문구 충정로70 웨스트게이트타워 10, 12, 16층</address></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="top-down">
+        <div class="topBtn">
+            <i class="xi-angle-up"></i><br>
+        </div>
+
+        <div class="downBtn">
+            <i class="xi-angle-down"></i>
+        </div>
+    </div>
+</body>
+</html>

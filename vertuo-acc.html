@@ -1,0 +1,1664 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nespresso_ACC</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/item-page.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/xeicon/2/xeicon.min.css">
+    <link rel="stylesheet" href="font/SUIT-woff2 (1)/SUIT.css">
+    <link rel="stylesheet" href="css/animation.css">
+
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery.js"></script>
+</head>
+
+
+<body>
+    <header id="header">
+        <div class="m-header">
+            <a href="rwd_lsh2.html"><img src="img/nespresso-wordmark-black.png" alt="header-logo" class="logo-img"></a>
+            <div class="button-wrapper">
+                <button id="search-btn"><i class="xi-search"></i></button>
+                <button id="menu-btn"><i class="xi-bars"></i></button>   
+            </div>
+        </div>
+    </header>
+
+    <div class="menu" id="nav-menu">
+        <div class="close">
+            <i class="xi-close"></i>
+        </div>
+
+        <ul class="main-menu">
+            <li class="main-sub">
+                <a href="vertuo-coffee.html" class="menu-title">
+                커피
+                <i class="xi-plus-thin"></i>
+                </a>
+                
+                <ul class="sub-menu">
+                    <li><a href="vertuo-coffee.html">버츄오 커피</a></li>
+                    <li><a href="vertuo-coffee.html">오리지널 커피</a></li>
+                    <li><a href="#">내 취향 커피 찾기</a></li>
+                </ul>
+            </li>
+
+            <li class="main-sub">
+                    <a href="vertuo-machine.html" class="menu-title">머신 <i class="xi-plus-thin"></i></a>
+
+                <ul class="sub-menu">
+                    <li><a href="vertuo-machine.html">버츄오 머신</a></li>
+                    <li><a href="vertuo-machine.html">오리지널 머신</a></li>
+                    <li><a href="#">버츄오 / 오리지널 머신 비교</a></li>
+                </ul>
+            </li>
+
+            <li class="main-sub">
+                <a href="#" class="menu-title">액세서리 <i class="xi-plus-thin"></i></a>
+
+                <ul class="sub-menu">
+                    <li><a href="vertuo-acc.html">버츄오 액세서리</a></li>
+                    <li><a href="vertuo-acc.html">오리지널 액세서리</a></li>
+                    <li><a href="acc-milk.html">우유 거품기</a></li>
+                    <li><a href="vertuo-acc.html">푸드 & 바이트</a></li>
+                    <li><a href="#">머신 부속품</a></li>
+                </ul>
+            </li>
+
+            <li class="main-sub">
+                <a href="#" class="menu-title">정품 등록 <i class="xi-plus-thin"></i></a>
+
+                <ul class="sub-menu">
+                    <li><a href="#">정품 등록 안내</a></li>
+                    <li><a href="#">보증 기간 안내</a></li>
+                </ul>
+            </li>
+
+            <li class="main-sub">
+                <a href="#" class="menu-title">프로페셔널<i class="xi-plus-thin"></i></a>
+
+                <ul class="sub-menu">
+                    <li><a href="#">기업용 커피</a></li>
+                    <li><a href="#">기업용 머신</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="user">
+            <!-- <a href="login.html">로그인</a> -->
+            <?php
+                session_start();
+                include 'top_login.php';
+            ?>
+
+            <a href="cart.html">장바구니</a>
+        </div>
+    </div>
+
+    <div class="menu-modal"></div>
+    
+    <div class="search-pop-down" id="search-bar">
+        <div class="search-wrapper">
+            <div class="search">
+                <form class="search-form">
+                    <div class="search-input">
+                        <input type="search" name="search" id="search_input" placeholder="Search...">
+                    </div>
+                </form>
+
+                <div class="search-icon">
+                    <button><i class="xi-search"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-close">
+            <button>
+                <i class="xi-close"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="search-modal"></div>
+
+
+
+    <div class="vertuo-coffee">
+        <nav class="quick-menu">
+            <ul>
+                <li><a href="#tab1" class="selected">버츄오</a></li>
+                <li><a href="#tab2">오리지널</a></li>
+                <li><a href="#tab3">푸드 &amp; 바이트</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="option">
+        <div class="option-wrapper">
+            <ul>
+                <li>
+                    <button id="filter-btn">종류</button>
+
+                    <ul class="sub">
+                        <li><a href="#" class="selected">전체</a></li>
+                        <li><a href="#">트래블 머그</a></li>
+                        <li><a href="#">재활용 백</a></li>
+                        <li><a href="#">우유 거품기</a></li>
+                        <li><a href="#">캡슐 디스펜서</a></li>
+                        <li><a href="#">디스케일링 키트</a></li>
+                        <li><a href="#">푸드 &amp; 바이트</a></li>
+                        <li><a href="#">컵 &amp; 잔 &amp; 스푼 &amp; 트레이</a></li>
+                        <li><a href="#">머신 부속품</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="sort-list">
+                    <button id="sort-btn">정렬</button>
+
+                    <ul class="sub">
+                        <li><a href="#" class="selected" id="case0">추천순</a></li>
+                        <li><a href="#" id="case1">낮은 가격순</a></li>
+                        <li><a href="#" id="case2">높은 가격순</a></li>
+                        <li><a href="#" id="case3">가나다 순</a></li>
+                        <li><a href="#" id="case4">가나다 역순</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="pc-option">
+        <ul class="filter">
+            <li>
+                <button><a href="#">종류</a></button>
+
+                <ul class="sub-option">
+                    <li><a href="#" class="selected">전체</a></li>
+                    <li><a href="#">트래블 머그</a></li>
+                    <li><a href="#">재활용 백</a></li>
+                    <li><a href="#">우유 거품기</a></li>
+                    <li><a href="#">캡슐 디스펜서</a></li>
+                    <li><a href="#">디스케일링 키트</a></li>
+                    <li><a href="#">푸드 &amp; 바이트</a></li>
+                    <li><a href="#">컵 &amp; 잔 &amp; 스푼 &amp; 트레이</a></li>
+                    <li><a href="#">머신 부속품</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="sort-list">
+            <li>
+                <button><a href="#">정렬</a></button>
+
+                <ul class="sub-option">
+                    <li><a href="#" class="selected">추천순</a></li>
+                    <li><a href="#">낮은 가격순</a></li>
+                    <li><a href="#">높은 가격순</a></li>
+                    <li><a href="#">가나다 순</a></li>
+                    <li><a href="#">가나다 역순</a></li>
+                </ul>
+            </li>
+        </ul>
+        </div>
+      
+
+
+
+        <div class="vertuo-coffee-list tab-content" id="tab1">
+            <h5>트래블 머그</h5>
+
+            <section>
+                <article class="test">
+                    <div class="name">
+                        <a href="#">트래블 텀블러 (피스타치오)</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-travel01.avif" alt="acc-vertuo-travel01" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩28,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">트래블 머그 미디엄 (바닐라 아이스)</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-travel02.avif" alt="acc-vertuo-travel02" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩35,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">트래블 머그 라지 (스모키 블루)</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-travel03.avif" alt="acc-vertuo-travel03" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩39,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">트래블 머그 터치</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-travel04.png" alt="acc-vertuo-travel04" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩30,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">트래블 머그 스몰 (시티 선 옐로우)</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-travel05.avif" alt="acc-vertuo-travel05" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩30,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">트래블 머그 스몰 (세이지 그린)</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-travel06.avif" alt="acc-vertuo-travel06" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩30,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            
+            <h5>우유 거품기</h5>
+
+            <section>
+                <article class="test">
+                    <div class="name">
+                        <a href="#">에어로치노4</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-milk01.avif" alt="acc-vertuo-milk01" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩149,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">에어로치노3 블랙</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-milk02.png" alt="acc-vertuo-milk02" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩135,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">에어로치노3 화이트</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-milk03.png" alt="acc-vertuo-milk03" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩135,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">바리스타 레시피 메이커</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/vertuo-machine/vertuo-barista1.png" alt="acc-vertuo-milk04" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩259,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            
+            <h5>캡슐 디스펜서</h5>
+            <section>
+                <article class="test">
+                    <div class="name">
+                        <a href="#">네스프레소 캡슐 스테이션</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-cap01.avif" alt="acc-vertuo-cap01" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩89,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">버츄오 버티컬 디스펜서</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-cap02.avif" alt="acc-vertuo-cap02" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩55,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">뷰 큐브</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-cap03.png" alt="acc-vertuo-cap03" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩41,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">뷰 봉보니에르</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-cap04.png" alt="acc-vertuo-cap04" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩39,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">미아 디스펜서, 미디엄</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-cap05.avif" alt="acc-vertuo-cap05" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩46,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+
+            <h5>머신 부속품</h5>
+            <section>
+                <article class="test">
+                    <div class="name">
+                        <a href="#">버츄오 플러스 물통</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-machine01.png" alt="acc-vertuo-machine01" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩12,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">버츄오 플러스 화이트 물통</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-machine02.png" alt="acc-vertuo-machine02" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩12,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">버츄오 넥스트 물통 (뚜겅 미포함) GCV1 / GDV1</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-machine03.png" alt="acc-vertuo-machine03" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩10,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">버츄오 플러스 드립 그리드 GCB2</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-machine04.png" alt="acc-vertuo-machine04" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩1,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">버츄오 플러스 캡슐 컨테이너 GCB2</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-machine05.png" alt="acc-vertuo-machine05" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩1,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">버츄오 넥스트 컵 받침 GCV1 / GDV1</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-machine06.png" alt="acc-vertuo-machine06" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩3,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">버츄오 넥스트 캡슐 컨테이너 GCV1 / GDV1</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-machine07.png" alt="acc-vertuo-machine07" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩3,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">버츄오 라티시마 우유 흡입 튜브 GDV5</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-machine08.png" alt="acc-vertuo-machine08" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩6,900</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">버츄오 라티시마 물통 (뚜껑 포함) GDV5</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-machine09.png" alt="acc-vertuo-machine09" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩10,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">바리스타 레시피 메이커 휘스크 4292</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-machine10.png" alt="acc-vertuo-machine10" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩14,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">바리스타 레시피 메이커 뚜껑 4292</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-machine11.png" alt="acc-vertuo-machine11" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩6,500</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">에어로치노3 휘스크</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-machine12.png" alt="acc-vertuo-machine12" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩4,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">에어로치노3 뚜껑</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-vertuo-machine13.png" alt="acc-vertuo-machine13" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩2,500</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+
+
+        <div class="vertuo-coffee-list tab-content" id="tab2">
+                <h5>트래블 머그</h5>
+
+                <section>
+                    <article class="test">
+                        <div class="name">
+                            <a href="#">트래블 텀블러 (피스타치오)</a>
+                        </div>
+
+                        <div class="img">
+                            <a href="#">
+                                <img src="img/acc-vertuo-travel01.avif" alt="acc-vertuo-travel01" class="acc">
+                            </a>
+                        </div>
+
+                        <div class="down">
+                            <div class="text">
+                                <span class="price">₩28,000</span>
+                            </div>
+
+                            <div class="btn">
+                                <button><span>장바구니</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="test">
+                        <div class="name">
+                            <a href="#">트래블 머그 미디엄 (바닐라 아이스)</a>
+                        </div>
+
+                        <div class="img">
+                            <a href="#">
+                                <img src="img/acc-vertuo-travel02.avif" alt="acc-vertuo-travel02" class="acc">
+                            </a>
+                        </div>
+
+                        <div class="down">
+                            <div class="text">
+                                <span class="price">₩35,000</span>
+                            </div>
+
+                            <div class="btn">
+                                <button><span>장바구니</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="test">
+                        <div class="name">
+                            <a href="#">트래블 머그 라지 (스모키 블루)</a>
+                        </div>
+
+                        <div class="img">
+                            <a href="#">
+                                <img src="img/acc-vertuo-travel03.avif" alt="acc-vertuo-travel03" class="acc">
+                            </a>
+                        </div>
+
+                        <div class="down">
+                            <div class="text">
+                                <span class="price">₩39,000</span>
+                            </div>
+
+                            <div class="btn">
+                                <button><span>장바구니</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="test">
+                        <div class="name">
+                            <a href="#">트래블 머그 터치</a>
+                        </div>
+
+                        <div class="img">
+                            <a href="#">
+                                <img src="img/acc-vertuo-travel04.png" alt="acc-vertuo-travel04" class="acc">
+                            </a>
+                        </div>
+
+                        <div class="down">
+                            <div class="text">
+                                <span class="price">₩30,000</span>
+                            </div>
+
+                            <div class="btn">
+                                <button><span>장바구니</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="test">
+                        <div class="name">
+                            <a href="#">트래블 머그 스몰 (시티 선 옐로우)</a>
+                        </div>
+
+                        <div class="img">
+                            <a href="#">
+                                <img src="img/acc-vertuo-travel05.avif" alt="acc-vertuo-travel05" class="acc">
+                            </a>
+                        </div>
+
+                        <div class="down">
+                            <div class="text">
+                                <span class="price">₩30,000</span>
+                            </div>
+
+                            <div class="btn">
+                                <button><span>장바구니</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="test">
+                        <div class="name">
+                            <a href="#">트래블 머그 스몰 (세이지 그린)</a>
+                        </div>
+
+                        <div class="img">
+                            <a href="#">
+                                <img src="img/acc-vertuo-travel06.avif" alt="acc-vertuo-travel06" class="acc">
+                            </a>
+                        </div>
+
+                        <div class="down">
+                            <div class="text">
+                                <span class="price">₩30,000</span>
+                            </div>
+
+                            <div class="btn">
+                                <button><span>장바구니</span></button>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+                
+                <h5>우유 거품기</h5>
+
+                <section>
+                    <article class="test">
+                        <div class="name">
+                            <a href="#">에어로치노4</a>
+                        </div>
+
+                        <div class="img">
+                            <a href="#">
+                                <img src="img/acc-vertuo-milk01.avif" alt="acc-vertuo-milk01" class="acc">
+                            </a>
+                        </div>
+
+                        <div class="down">
+                            <div class="text">
+                                <span class="price">₩149,000</span>
+                            </div>
+
+                            <div class="btn">
+                                <button><span>장바구니</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="test">
+                        <div class="name">
+                            <a href="#">에어로치노3 블랙</a>
+                        </div>
+
+                        <div class="img">
+                            <a href="#">
+                                <img src="img/acc-vertuo-milk02.png" alt="acc-vertuo-milk02" class="acc">
+                            </a>
+                        </div>
+
+                        <div class="down">
+                            <div class="text">
+                                <span class="price">₩135,000</span>
+                            </div>
+
+                            <div class="btn">
+                                <button><span>장바구니</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="test">
+                        <div class="name">
+                            <a href="#">에어로치노3 화이트</a>
+                        </div>
+
+                        <div class="img">
+                            <a href="#">
+                                <img src="img/acc-vertuo-milk03.png" alt="acc-vertuo-milk03" class="acc">
+                            </a>
+                        </div>
+
+                        <div class="down">
+                            <div class="text">
+                                <span class="price">₩135,000</span>
+                            </div>
+
+                            <div class="btn">
+                                <button><span>장바구니</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="test">
+                        <div class="name">
+                            <a href="#">바리스타 레시피 메이커</a>
+                        </div>
+
+                        <div class="img">
+                            <a href="#">
+                                <img src="img/vertuo-machine/vertuo-barista1.png" alt="acc-vertuo-milk04" class="acc">
+                            </a>
+                        </div>
+
+                        <div class="down">
+                            <div class="text">
+                                <span class="price">₩259,000</span>
+                            </div>
+
+                            <div class="btn">
+                                <button><span>장바구니</span></button>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+                
+                <h5>캡슐 디스펜서</h5>
+                <section>
+                    <article class="test">
+                        <div class="name">
+                            <a href="#">네스프레소 캡슐 스테이션</a>
+                        </div>
+
+                        <div class="img">
+                            <a href="#">
+                                <img src="img/acc-vertuo-cap01.avif" alt="acc-original-cap01" class="acc">
+                            </a>
+                        </div>
+
+                        <div class="down">
+                            <div class="text">
+                                <span class="price">₩89,000</span>
+                            </div>
+
+                            <div class="btn">
+                                <button><span>장바구니</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="test">
+                        <div class="name">
+                            <a href="#">오리지널 버티컬 디스펜서</a>
+                        </div>
+
+                        <div class="img">
+                            <a href="#">
+                                <img src="img/acc-original-cap1.avif" alt="acc-original-cap02" class="acc">
+                            </a>
+                        </div>
+
+                        <div class="down">
+                            <div class="text">
+                                <span class="price">₩55,000</span>
+                            </div>
+
+                            <div class="btn">
+                                <button><span>장바구니</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="test">
+                        <div class="name">
+                            <a href="#">뷰 큐브</a>
+                        </div>
+
+                        <div class="img">
+                            <a href="#">
+                                <img src="img/acc-vertuo-cap03.png" alt="acc-original-cap03" class="acc">
+                            </a>
+                        </div>
+
+                        <div class="down">
+                            <div class="text">
+                                <span class="price">₩41,000</span>
+                            </div>
+
+                            <div class="btn">
+                                <button><span>장바구니</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="test">
+                        <div class="name">
+                            <a href="#">뷰 봉보니에르</a>
+                        </div>
+
+                        <div class="img">
+                            <a href="#">
+                                <img src="img/acc-vertuo-cap04.png" alt="acc-original-cap04" class="acc">
+                            </a>
+                        </div>
+
+                        <div class="down">
+                            <div class="text">
+                                <span class="price">₩39,000</span>
+                            </div>
+
+                            <div class="btn">
+                                <button><span>장바구니</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="test">
+                        <div class="name">
+                            <a href="#">미아 디스펜서, 미디엄</a>
+                        </div>
+
+                        <div class="img">
+                            <a href="#">
+                                <img src="img/acc-vertuo-cap05.avif" alt="acc-original-cap05" class="acc">
+                            </a>
+                        </div>
+
+                        <div class="down">
+                            <div class="text">
+                                <span class="price">₩46,000</span>
+                            </div>
+
+                            <div class="btn">
+                                <button><span>장바구니</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="test">
+                        <div class="name">
+                            <a href="#">뷰 버실로</a>
+                        </div>
+
+                        <div class="img">
+                            <a href="#">
+                                <img src="img/acc-original-cap2.png" alt="acc-original-cap06" class="acc">
+                            </a>
+                        </div>
+
+                        <div class="down">
+                            <div class="text">
+                                <span class="price">₩50,000</span>
+                            </div>
+
+                            <div class="btn">
+                                <button><span>장바구니</span></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="test">
+                        <div class="name">
+                            <a href="#">오리지널 디스커버리 박스</a>
+                        </div>
+
+                        <div class="img">
+                            <a href="#">
+                                <img src="img/acc-original-cap03.png" alt="acc-original-cap07" class="acc">
+                            </a>
+                        </div>
+
+                        <div class="down">
+                            <div class="text">
+                                <span class="price">₩54,000</span>
+                            </div>
+
+                            <div class="btn">
+                                <button><span>장바구니</span></button>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+
+            <h5>머신 부속품</h5>
+            <section>
+                <article class="test">
+                    <div class="name">
+                        <a href="#">라티시마 원 물통 화이트 F111</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-original-machine01.png" alt="acc-original-machine01" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩16,900</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">라티시마 터치 물통 F511</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-original-machine02.png" alt="acc-original-machine02" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩21,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">크리아티스타 플러스 물통 뚜껑 J520</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-original-machine03.png" alt="acc-original-machine03" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩7,500</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">라티시마 원 물통 (뚜껑 미포함) F111</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-original-machine04.png" alt="acc-original-machine04" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩15,900</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">이니시아 물통</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-original-machine05.png" alt="acc-original-machine05" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩7,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">유 밀크 물통 (뚜껑 미포함)</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-original-machine06.png" alt="acc-original-machine06" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩7,500</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">크리아티스타 플러스 물통 (뚜껑 미포함)</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-original-machine07.png" alt="acc-original-machine07" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩21,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">픽시 드립 그리드 C60 / C61</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-original-machine08.png" alt="acc-original-machine08" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩1,900</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">크리아티스타 플러스 우유 저그 J520</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-original-machine09.png" alt="acc-original-machine09" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩25,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="test">
+                    <div class="name">
+                        <a href="#">크리아티스타 플러스 스팀 파이프 팁 J520</a>
+                    </div>
+
+                    <div class="img">
+                        <a href="#">
+                            <img src="img/acc-original-machine10.png" alt="acc-original-machine10" class="acc">
+                        </a>
+                    </div>
+
+                    <div class="down">
+                        <div class="text">
+                            <span class="price">₩7,000</span>
+                        </div>
+
+                        <div class="btn">
+                            <button><span>장바구니</span></button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </div>
+
+
+
+
+        <div class="vertuo-coffee-list tab-content" id="tab3">
+        <h5>푸드 &amp; 바이트</h5>
+
+        <section>
+            <article class="test">
+                <div class="name">
+                    <a href="#">쉬크르 루 (황설탕)</a>
+                </div>
+
+                <div class="img">
+                    <a href="#">
+                        <img src="img/acc-food01.png" alt="acc-food01" class="acc">
+                    </a>
+                </div>
+
+                <div class="down">
+                    <div class="text">
+                        <span class="price">₩10,000</span>
+                    </div>
+
+                    <div class="btn">
+                        <button><span>장바구니</span></button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="test">
+                <div class="name">
+                    <a href="#">레몬 쇼트브레드</a>
+                </div>
+
+                <div class="img">
+                    <a href="#">
+                        <img src="img/acc-food02.avif" alt="acc-food02" class="acc">
+                    </a>
+                </div>
+
+                <div class="down">
+                    <div class="text">
+                        <span class="price">₩12,000</span>
+                    </div>
+
+                    <div class="btn">
+                        <button><span>장바구니</span></button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="test">
+                <div class="name">
+                    <a href="#">칸투치니</a>
+                </div>
+
+                <div class="img">
+                    <a href="#">
+                        <img src="img/acc-food03.avif" alt="acc-food03" class="acc">
+                    </a>
+                </div>
+
+                <div class="down">
+                    <div class="text">
+                        <span class="price">₩10,000</span>
+                    </div>
+
+                    <div class="btn">
+                        <button><span>장바구니</span></button>
+                    </div>
+                </div>
+            </article>
+        </section>    
+    </div>
+    </div>
+
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-category category1">
+                <div class="footer-click">
+                    <h3>네스프레소</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="#">지속 가능성</a>
+                    <a href="#">채용</a>
+                    <a href="#">네스프레소 레시피</a>
+                    <a href="#">회사 소개</a>
+                </div>
+            </div>
+
+            <div class="footer-category category2">
+                <div class="footer-click">
+                    <h3>고객 서비스</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="#">머신 사용</a>
+                    <a href="#">배송 조회</a>
+                    <a href="#">주문 조회 / 취소</a>
+                    <a href="#">클럽 멤버 가입</a>
+                </div>
+            </div>
+
+            <div class="footer-category category3">
+                <div class="footer-click">
+                    <h3>문의</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="https://bizmessage.kakao.com/chat/open/@nespresso_club?extra=NPmobile&bot=true&event=start" target="_blank">카카오톡 상담</a>
+                    <a href="tel:0807341111" target="_blank">국내 전화</a>
+                    <a href="tel:+82232771398" target="_blank">국제 전화</a>
+                    <a href="https://www.nespresso.com/kr/ko/contactus" target="_blank">이메일 문의</a>
+                </div>
+            </div>
+
+            <div class="footer-category category4">
+                <div class="footer-click">
+                    <h3>SNS</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="https://www.instagram.com/nespresso.kr" target="_blank">인스타그램</a>
+                    <a href="https://www.youtube.com/user/nespresso" target="_blank">유튜브</a>
+                    <a href="https://www.twitter.com/nespresso" target="_blank">X</a>
+                    <a href="https://www.facebook.com/Nespresso" target="_blank">페이스북</a>
+                    <a href="https://www.pinterest.com/nespresso/" target="_blank">핀터레스트</a>
+                </div>
+            </div>
+
+            <div class="footer-category category4">
+                <div class="footer-click">
+                    <h3>약관·정책</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="#">판매이용약관</a>
+                    <a href="#" class="highlight">개인정보 처리방침</a>
+                    <a href="#">쿠키</a>
+                    <a href="#">사이트맵</a>
+                    <a href="#">웹 접근성</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-ex">
+            <div class="lan-box">
+                <form class="language">
+                    <select name="language" id="language">
+                        <option value="한국어">한국어</option>
+                        <option value="english">English</option>
+                    </select>
+                </form>
+            </div>
+
+            <div class="payment">
+                <img src="img/payment.png" alt="payment img">
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="txt">
+                <p>상호 : 네슬레코리아 유한책임회사</p>
+                <p>대표자 : 토마스제프리카소</p>
+            </div>
+
+            <div class="txt">
+                <p>사업자등록번호 : 110-86-10100</p>
+                <a href="#">통신판매업신고 : 2014-서울서대문-0247</a>
+            </div>
+
+            <div class="txt">
+                <a href="#">채무지급보증안내</a>
+                <a href="#">정보보호관리체계</a>
+                <a href="#">대표번호 : 080-734-1111</a>
+            </div>
+
+            <div class="txt">
+                <a href="#">이메일 : club.korea@nespresso.com</a>
+            </div>
+
+            <div class="txt">
+                <p><address>주소 : 서울시 서대문구 충정로70 웨스트게이트타워 10, 12, 16층</address></p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <div class="top-down">
+        <div class="topBtn">
+            <i class="xi-angle-up"></i><br>
+        </div>
+
+        <div class="downBtn">
+            <i class="xi-angle-down"></i>
+        </div>
+    </div>
+</body>
+
+
+</html>
