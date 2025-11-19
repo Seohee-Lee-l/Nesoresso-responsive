@@ -37,22 +37,6 @@ $(function() {
         }
     }
 
-    // 이미지 업데이트 함수
-    function updateImages() {
-        const isPc = $(window).width() >= 1200;
-        $("#main_image ul li img").each(function() {
-            const $img = $(this);
-            const pcSrc = $img.data("pc");
-            const mobileSrc = $img.data("mobile");
-
-            if (isPc && pcSrc) {
-                $img.attr("src", pcSrc);
-            } else if (mobileSrc) {
-                $img.attr("src", mobileSrc);
-            }
-        });
-    }
-
     // 통합된 resize 핸들러
     function handleWindowResize() {
         // 메인 탭 더보기 버튼 관련
@@ -300,33 +284,7 @@ $(function() {
             $(".search-modal").fadeOut(300);
             isOpen = false;
         }
-    });    
-    
-    
-    // 제품 페이지 - 옵션
-    function updateCoffeeListPadding() {
-        const windowWidth = $(window).width();
-        
-        if (windowWidth >= 1200) {
-            return;
-        }
-        
-        const hasVisibleSub = $('.option .sub:visible').length > 0;
-        
-        if (hasVisibleSub) {
-            if (windowWidth <= 800) {
-                $('.vertuo-coffee-list').css('padding-top', '35%');
-            } else if (windowWidth <= 1199) {
-                $('.vertuo-coffee-list').css('padding-top', '23%');
-            }
-        } else {
-            if (windowWidth <= 800) {
-                $('.vertuo-coffee-list').css('padding-top', '27%');
-            } else if (windowWidth <= 1199) {
-                $('.vertuo-coffee-list').css('padding-top', '15%');
-            }
-        }
-    }
+    });
 
     $("#filter-btn").click(function(e) {
         e.preventDefault();
@@ -523,7 +481,6 @@ $(function() {
         });
     }
 
-
     // quick-menu 스크롤 고정
     if (location.pathname.indexOf('rwd_lsh2.html') !== -1 && $('.quick-menu').length) {
         const quickMenuOriginTop = $('.quick-menu').offset().top;
@@ -618,7 +575,7 @@ $(function() {
 
             const maxTop=footerTop-optionHeight;
             // option이 움직일 수 있는 최대 top 값
-            // maaxTop=옵션 박스의 top이 0에서 시작해서, footer에 닿기 전까지 이동할 수 있는 최대 거리
+            // maxTop=옵션 박스의 top이 0에서 시작해서, footer에 닿기 전까지 이동할 수 있는 최대 거리
 
             if ($(window).scrollTop() < maxTop) {
                 $option.css("top", "0px");
@@ -770,7 +727,7 @@ $(function() {
         const isChecked=$(this).is(":checked");
         $(".check-box input[type='checkbox']").prop("checked", isChecked);
     });
-});
+})
 // jQuery end   
 
 
@@ -812,7 +769,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showSlide(0);
     }
 
-    // ite-vertuo-pop 본문 이미지 페이드인아웃
+    // item-vertuo-pop 본문 이미지 페이드인아웃
     let fadeShows=document.querySelectorAll(".fadeShow");
 
     fadeShows.forEach(fadeShow=> {
