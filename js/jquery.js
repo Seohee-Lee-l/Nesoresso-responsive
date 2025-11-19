@@ -383,7 +383,9 @@ $(function() {
     const $bookRoll = $("#book_roll li a");
 
     let curIndex = 0;
-    const totalSlide = $slide.length;    function slideto(index) {
+    const totalSlide = $slide.length;
+    
+    function slideto(index) {
         curIndex = index;
         if (curIndex >= totalSlide) curIndex = 0;
         if (curIndex < 0) curIndex = totalSlide - 1;
@@ -671,10 +673,6 @@ $(function() {
         }
     });
 
-
-
-
-
     // top 버튼
     $(".topBtn").on('click', function() {
         $('html, body').animate({scrollTop: 0}, 700);
@@ -684,8 +682,6 @@ $(function() {
     $(".downBtn").on("click", function() {
         $('html, body').animate({scrollTop: $(document).height()}, 700);
     });
-
-    
 
     // 레시피 모달창 기능
     $(".item-page2 .article").on("click", function() {
@@ -697,7 +693,7 @@ $(function() {
         }
     });
 
-    // 모달창 닫기 - X 버튼 클릭
+    // 레시피 모달창 닫기 - X 버튼 클릭
     $(".recipe-modal .rmodal-close").on("click", function() {
         $(this).closest(".recipe-modal").removeClass("active");
         $("body").css("overflow", "auto");
@@ -721,7 +717,7 @@ $(function() {
             $('.r-modal').css("display", "none");
         }
     });
-    
+
     // 전체 동의 체크박스 기능
     $('.all-check input[type="checkbox"]').on('change', function() {
         const isChecked=$(this).is(':checked');

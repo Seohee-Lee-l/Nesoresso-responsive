@@ -852,6 +852,7 @@ a {
     background: rgba(255, 255, 255);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     position: relative;
+    animation: fadeInUp 0.5s ease;
 }
 
 .recipe-modal .rmodal-close {
@@ -989,7 +990,6 @@ a {
     z-index: 999;
     display: none;
 }
-
 
 
 /* footer */
