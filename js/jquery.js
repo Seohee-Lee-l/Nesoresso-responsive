@@ -655,8 +655,6 @@ $(function() {
         $main.scrollLeft(scrollLeft-walk);
     });
 
-
-
     // 애니메이션
     $(window).on('scroll', function() {
         $('.col > div').each(function() {
@@ -806,9 +804,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         showSlide(0);
     }
-
-
-
 
     // ite-vertuo-pop 본문 이미지 페이드인아웃
     let fadeShows=document.querySelectorAll(".fadeShow");
