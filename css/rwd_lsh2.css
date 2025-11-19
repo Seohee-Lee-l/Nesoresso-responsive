@@ -331,7 +331,7 @@ a {
     object-fit: cover;
 }
 
-#main_image ul li:nth-child(1) .caption {
+#main_image ul li:nth-child(3) .caption {
     position: absolute;
     top: 25%;
     left: 15%;
@@ -339,7 +339,7 @@ a {
     width: 100%;
 }
 
-#main_image ul li:nth-child(1) .caption h3 {
+#main_image ul li:nth-child(3) .caption h3 {
     color: #fff;
     font-weight: 600;
     letter-spacing: 2px;
@@ -348,11 +348,11 @@ a {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-#main_image ul li:nth-child(1) .caption h3 span {
+#main_image ul li:nth-child(3) .caption h3 span {
     color: #00a9e0;
 }
 
-#main_image ul li:nth-child(1) .caption p {
+#main_image ul li:nth-child(3) .caption p {
     color: #f0f0f0;
     font-size: 1rem;
     font-weight: 400;
@@ -384,14 +384,14 @@ a {
     font-weight: 400;
 }
 
-#main_image ul li:nth-child(3) .caption {
+#main_image ul li:nth-child(1) .caption {
     position: absolute;
     top: 60%;
     left: 50%;
     transform: translateX(-50%);
 }
 
-#main_image ul li:nth-child(3) .caption h3 {
+#main_image ul li:nth-child(1) .caption h3 {
     color: #fff;
     font-weight: 600;
     font-size: 1.5rem;
@@ -399,11 +399,7 @@ a {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-#main_image ul li:nth-child(3) .caption h3 span {
-    color: #ffd700;
-}
-
-#main_image ul li:nth-child(3) .caption p {
+#main_image ul li:nth-child(1) .caption p {
     color: #f0f8f8;
     font-size: 1rem;
     font-weight: 400;
@@ -1385,7 +1381,7 @@ section, .tab-content, .bluebottle, .florian, .starbucks, .coffee-letter, .new, 
     }
 
     /* 첫 번째 슬라이드 텍스트 */
-    #main_image ul li:nth-child(1) .caption {
+    #main_image ul li:nth-child(3) .caption {
         position: absolute;
         top: 30%;
         left: 10%;
@@ -1395,7 +1391,7 @@ section, .tab-content, .bluebottle, .florian, .starbucks, .coffee-letter, .new, 
         padding: 1.5rem;
     }
 
-    #main_image ul li:nth-child(1) .caption h3 {
+    #main_image ul li:nth-child(3) .caption h3 {
         color: #fff;
         font-weight: 600;
         font-size: 1.8rem;
@@ -1403,17 +1399,19 @@ section, .tab-content, .bluebottle, .florian, .starbucks, .coffee-letter, .new, 
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     }
 
-    #main_image ul li:nth-child(1) .caption h3 span {
+    #main_image ul li:nth-child(3) .caption h3 span {
         color: #00a9e0;
         font-weight: 700;
     }
 
-    #main_image ul li:nth-child(1) .caption p {
+    #main_image ul li:nth-child(3) .caption p {
         color: #f0f0f0;
         font-size: 1.1rem;
         font-weight: 400;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-    }    /* 두 번째 슬라이드 텍스트 */
+    }
+    
+    /* 두 번째 슬라이드 텍스트 */
     #main_image ul li:nth-child(2) .caption {
         position: absolute;
         top: 25%;
@@ -1446,7 +1444,7 @@ section, .tab-content, .bluebottle, .florian, .starbucks, .coffee-letter, .new, 
     }
 
     /* 세 번째 슬라이드 텍스트 */
-    #main_image ul li:nth-child(3) .caption {
+    #main_image ul li:nth-child(1) .caption {
         position: absolute;
         top: 50%;
         left: 35%;
@@ -1457,7 +1455,7 @@ section, .tab-content, .bluebottle, .florian, .starbucks, .coffee-letter, .new, 
         padding: 1.5rem;
     }
 
-    #main_image ul li:nth-child(3) .caption h3 {
+    #main_image ul li:nth-child(1) .caption h3 {
         color: #fff;
         font-weight: 600;
         font-size: 1.8rem;
@@ -1465,12 +1463,7 @@ section, .tab-content, .bluebottle, .florian, .starbucks, .coffee-letter, .new, 
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     }
 
-    #main_image ul li:nth-child(3) .caption h3 span {
-        color: #ffd700;
-        font-weight: 700;
-    }
-
-    #main_image ul li:nth-child(3) .caption p {
+    #main_image ul li:nth-child(1) .caption p {
         color: #f0f8f8;
         font-size: 1rem;
         font-weight: 400;
@@ -1483,7 +1476,9 @@ section, .tab-content, .bluebottle, .florian, .starbucks, .coffee-letter, .new, 
 
     .quick-menu ul li a {
         font-size: 1rem !important;
-    }    /* 기존 중복 caption 스타일 제거하고 통합 */
+    }
+    
+    /* 기존 중복 caption 스타일 제거하고 통합 */
     .caption .color {
         color: rgb(61, 35, 0);
     }
@@ -1529,7 +1524,7 @@ section, .tab-content, .bluebottle, .florian, .starbucks, .coffee-letter, .new, 
     .search-wrapper .search-icon button {
         font-size: 1.4rem;
         vertical-align: middle;
-    }    /* 중복된 caption 스타일 제거 */
+    }
 
     .tab-content .title {
         font-size: 1.2rem;
@@ -1781,7 +1776,9 @@ section, .tab-content, .bluebottle, .florian, .starbucks, .coffee-letter, .new, 
         height: 100%;
         width: 100%;
         object-fit: cover;
-    }    #main_image ul li:nth-child(1) .caption {
+    }
+    
+    #main_image ul li:nth-child(3) .caption {
         position: absolute;
         top: 25%;
         left: 50%;
@@ -1790,7 +1787,7 @@ section, .tab-content, .bluebottle, .florian, .starbucks, .coffee-letter, .new, 
         text-align: left;
     }
 
-    #main_image ul li:nth-child(1) .caption h3 {
+    #main_image ul li:nth-child(3) .caption h3 {
         color: #fff;
         font-weight: 600;
         font-size: 2.2rem;
@@ -1798,13 +1795,13 @@ section, .tab-content, .bluebottle, .florian, .starbucks, .coffee-letter, .new, 
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
 
-    #main_image ul li:nth-child(1) .caption h3 span {
+    #main_image ul li:nth-child(3) .caption h3 span {
         color: #00a9e0;
         font-weight: 700;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     }
 
-    #main_image ul li:nth-child(1) .caption p {
+    #main_image ul li:nth-child(3) .caption p {
         color: #f0f0f0;
         font-size: 1.1rem;
         font-weight: 400;
@@ -1839,7 +1836,7 @@ section, .tab-content, .bluebottle, .florian, .starbucks, .coffee-letter, .new, 
         text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6);
     }
     
-    #main_image ul li:nth-child(3) .caption {
+    #main_image ul li:nth-child(1) .caption {
         position: absolute;
         top: 10%;
         left: 20%;
@@ -1848,7 +1845,7 @@ section, .tab-content, .bluebottle, .florian, .starbucks, .coffee-letter, .new, 
         text-align: left;
     }
 
-    #main_image ul li:nth-child(3) .caption h3 {
+    #main_image ul li:nth-child(1) .caption h3 {
         color: #fff;
         font-weight: 600;
         font-size: 2.1rem;
@@ -1856,13 +1853,7 @@ section, .tab-content, .bluebottle, .florian, .starbucks, .coffee-letter, .new, 
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
 
-    #main_image ul li:nth-child(3) .caption h3 span {
-        color: #ffd700;
-        font-weight: 700;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    }
-
-    #main_image ul li:nth-child(3) .caption p {
+    #main_image ul li:nth-child(1) .caption p {
         color: #f0f8f8;
         font-size: 1rem;
         font-weight: 400;
