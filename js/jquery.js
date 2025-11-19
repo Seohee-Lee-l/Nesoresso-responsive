@@ -711,7 +711,7 @@ $(function() {
 
     // 모달창 닫기 - ESC 키
     $(document).on("keydown", function(e) {
-        if (e.keyCode === 27) { // ESC 키
+        if (e.keyCode===27) {
             $(".recipe-modal.active").removeClass("active");
             $("body").css("overflow", "auto");
             $('.r-modal').css("display", "none");
