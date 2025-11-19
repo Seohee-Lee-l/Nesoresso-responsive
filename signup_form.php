@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/signup.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/xeicon/2/xeicon.min.css">
-    <link rel="stylesheet" href="font/SUIT-woff2 (1)/SUIT.css">
+    <link rel="stylesheet" href="font/SUIT-woff2/SUIT.css">
     <link rel="stylesheet" href="css/animation.css">
     <script src="js/jquery-1.11.2.min.js"></script>
     <script src="js/jquery.js"></script>
