@@ -169,7 +169,6 @@ $(function() {
                 }
             }
 
-
             let showCount=getShowCount();
 
             function initList() {
@@ -179,7 +178,6 @@ $(function() {
 
             initList();
 
-
             $moreBtn.off("click").on("click", function() {
                 showCount+=getShowCount();
 
@@ -187,7 +185,7 @@ $(function() {
                     showCount=totalItems;
                 }
                 showItems(showCount);
-            });            // resize 이벤트는 통합된 핸들러에서 처리됨
+            });
         });
    });
 
