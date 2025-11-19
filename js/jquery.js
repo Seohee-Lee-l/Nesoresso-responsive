@@ -721,11 +721,16 @@ $(function() {
             $('.r-modal').css("display", "none");
         }
     });
+    
+    // 전체 동의 체크박스 기능
+    $('.all-check input[type="checkbox"]').on('change', function() {
+        const isChecked=$(this).is(':checked');
 
-    // 회원가입 약관 동의 전체 선택
-    $('.all-check input[type="checkbox"]').on("change", function() {
-        const isChecked=$(this).is(":checked");
-        $(".check-box input[type='checkbox']").prop("checked", isChecked);
+        if (isChecked) {
+            $('.check-box input[type="checkbox"]').prop('checked', true);
+        } else {
+            $('.check-box input[type="checkbox"]').prop('checked', false);
+        }
     });
 })
 // jQuery end   
