@@ -124,7 +124,7 @@ $(function() {
     });
 
 
-    // 메인 더보기 버튼
+   // 메인 더보기 버튼
    $(".tab-content").each(function() {
         const $tab=$(this);
 
@@ -174,11 +174,6 @@ $(function() {
                 }
                 showItems(showCount);
             });
-        });
-
-        // resize 이벤트 시 초기화
-        $(window).on('resize', function() {
-            const winWidth=$(window).width();
         });
    });
 
