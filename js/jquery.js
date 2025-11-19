@@ -134,6 +134,10 @@ $(function() {
         return false;
     });
 
+    // 메인 탭 장바구니 버튼 이동
+    $('.quick-menu ul li a.tabCart').click(function() {
+        window.location.href='cart.html';
+    });
 
 
     // 메인 더보기 버튼
