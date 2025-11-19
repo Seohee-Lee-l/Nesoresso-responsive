@@ -187,6 +187,11 @@ $(function() {
                 showItems(showCount);
             });
         });
+
+        // resize 이벤트 시 초기화
+        $(window).on('resize', function() {
+            const winWidth=$(window).width();
+        });
    });
 
 
