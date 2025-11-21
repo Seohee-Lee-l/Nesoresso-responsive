@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nespresso_Starbucks_esoresso_roast</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/acc_travelTm.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/xeicon/2/xeicon.min.css">
+    <link rel="stylesheet" href="font/SUIT-woff2/SUIT.css">
+    <link rel="stylesheet" href="css/animation.css">
+
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery.js"></script>
+</head>
+
+
+<body>
+    <header id="header">
+        <div class="m-header">
+            <a href="rwd_lsh2.html"><img src="img/nespresso-wordmark-black.png" alt="header-logo" class="logo-img"></a>
+            <div class="button-wrapper">
+                <button id="search-btn"><i class="xi-search"></i></button>
+                <button id="menu-btn"><i class="xi-bars"></i></button>   
+            </div>
+        </div>
+    </header>
+
+    <div class="menu" id="nav-menu">
+        <div class="close">
+            <i class="xi-close"></i>
+        </div>
+
+        <ul class="main-menu">
+            <li class="main-sub">
+                <a href="vertuo-coffee.html" class="menu-title">
+                커피
+                <i class="xi-plus-thin"></i>
+                </a>
+                
+                <ul class="sub-menu">
+                    <li><a href="vertuo-coffee.html">버츄오 커피</a></li>
+                    <li><a href="vertuo-coffee.html">오리지널 커피</a></li>
+                    <li><a href="#">내 취향 커피 찾기</a></li>
+                </ul>
+            </li>
+
+            <li class="main-sub">
+                    <a href="vertuo-machine.html" class="menu-title">머신 <i class="xi-plus-thin"></i></a>
+
+                <ul class="sub-menu">
+                    <li><a href="vertuo-machine.html">버츄오 머신</a></li>
+                    <li><a href="vertuo-machine.html">오리지널 머신</a></li>
+                    <li><a href="#">버츄오 / 오리지널 머신 비교</a></li>
+                </ul>
+            </li>
+
+            <li class="main-sub">
+                <a href="#" class="menu-title">액세서리 <i class="xi-plus-thin"></i></a>
+
+                <ul class="sub-menu">
+                    <li><a href="vertuo-acc.html">버츄오 액세서리</a></li>
+                    <li><a href="vertuo-acc.html">오리지널 액세서리</a></li>
+                    <li><a href="acc-milk.html">우유 거품기</a></li>
+                    <li><a href="vertuo-acc.html">푸드 & 바이트</a></li>
+                    <li><a href="#">머신 부속품</a></li>
+                </ul>
+            </li>
+
+            <li class="main-sub">
+                <a href="#" class="menu-title">정품 등록 <i class="xi-plus-thin"></i></a>
+
+                <ul class="sub-menu">
+                    <li><a href="#">정품 등록 안내</a></li>
+                    <li><a href="#">보증 기간 안내</a></li>
+                </ul>
+            </li>
+
+            <li class="main-sub">
+                <a href="#" class="menu-title">프로페셔널<i class="xi-plus-thin"></i></a>
+
+                <ul class="sub-menu">
+                    <li><a href="#">기업용 커피</a></li>
+                    <li><a href="#">기업용 머신</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="user">
+            <!-- <a href="login.html">로그인</a> -->
+            <?php
+                session_start();
+                include 'top_login.php';
+            ?>
+
+            <a href="cart.html">장바구니</a>
+        </div>
+    </div>
+
+    <div class="menu-modal"></div>
+    
+    <div class="search-pop-down" id="search-bar">
+        <div class="search-wrapper">
+            <div class="search">
+                <form class="search-form">
+                    <div class="search-input">
+                        <input type="search" name="search" id="search_input" placeholder="Search...">
+                    </div>
+                </form>
+
+                <div class="search-icon">
+                    <button><i class="xi-search"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-close">
+            <button>
+                <i class="xi-close"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="search-modal"></div>
+
+
+    <div class="filter">
+        <div class="filter-wrapper">
+            <ul>
+                <li><a href="vertuo-coffee.html">액세서리</a></li>
+                <li><a href="vertuo-coffee.html">버츄오</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="wrapper cf">
+        <div class="item-main">
+            <div class="img">
+                <img src="img/acc/travel-tumblr.png" alt="item-img">
+            </div>    
+
+            <div class="info">
+                <div class="name">
+                    <span>트래블 텀블러</span>
+                </div>
+
+                <div class="cart-wrapper">
+                    <div class="price">
+                        <p>₩28,000</p>
+                    </div>
+
+                    <div class="count-wrapper">
+                        <div class="count-box">
+                            <button class="minus"><i class="xi-minus-thin"></i></button>
+                            <span class="count">1</span>
+                            <button class="plus"><i class="xi-plus-thin"></i></button>
+                        </div>
+                    </div>
+                </div>     
+
+                <div class="btn">
+                    <button><span>장바구니</span></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-title">
+        </div>
+
+        <div class="detail">
+            <div class="detail01">
+                <p>용량</p>
+                <p>540ml</p>
+            </div>
+
+            <div class="detail02">
+                <p>크기</p>
+                <p>지름 92.7mm x 높이 122mm</p>
+                <p>내장 스트로우 / 캡</p>
+            </div>
+
+            <div class="detail03">
+                <p><small>식기 세척기 사용 가능</small></p>
+            </div>
+        </div>
+
+        <div class="item-page-title">
+            <h5>Nomad Tumbler</h5>
+        </div>
+
+        <div class="item-page">
+            <div class="item-imgs">
+                <img src="img/acc/Nespresso+Tumbler_01.webp" alt="tmblr-img1">
+                <img src="img/acc/Nespresso+Tumbler_02.webp" alt="tmblr-img2">
+            </div>
+
+            <p class="copy">
+                <small>
+                    이미지 출처 &copy; 
+                    <a href="https://www.federicoperi.com/">Federio Peri</a>
+                </small>
+            </p>
+
+            <div class="text">
+                <p class="item-text1">
+                    아이스 커피를 즐기는 당신에게 완벽한 아이스 커피 경험을 선사하는
+                    <br>
+                    아이스 전용 텀블러
+                </p>
+
+                <p class="item-text2">
+                    내장된 전용 스트로우와 캡으로 스타일리시하고 간편하게
+                    <br>
+                    세로 스트라이프 패턴으로 편안한 그립감
+                </p>
+            </div>    
+
+            <div class="page1">
+                <h4>About the designer</h4>
+
+                <img src="img/acc/federico_m_2x.avif" alt="designer-Federico-Peri" class="designer-img">
+
+                <div class="designer-profile">
+                    <h5 class="designer-name">Federico Peri</h5>
+
+                    <a class="txt2" href="https://www.federicoperi.com/tumbler-ice-tray" target="_blank">
+                        페데리코 페리 &gt;
+                    </a>
+                </div>
+
+                <div class="txt-group">
+                    <p class="txt1">
+                        이탈리아 밀라노에 기반을 둔 디자이너 페데리코 페리(Federico Peri)
+
+                        <br>
+
+                        2011년 인테리어 및 제품 디자인 스튜디오를 설립하여 지금까지 다양한 산업 디자인을 해오고 있습니다.
+                    </p>
+                </div>
+                
+                <div class="design-imgs">
+                    <img src="img/acc/WW_ALL_OL-VL_Federico+Peri_Access+Design_23-24.tif.webp" alt="federico-design1" class="design-img1">
+                    <img src="img/acc/WW_ALL_OL-VL_Federico+Peri_Portrait+3_23-24.tif.webp" alt="federico-design2" class="design-img2">
+                </div>
+
+                <p class="copy">
+                <small>
+                    이미지 출처 &copy; 
+                    <a href="https://www.federicoperi.com/">Federio Peri</a>
+                </small>
+            </p>
+            </div>
+        </div>
+
+        <div class="ex">
+            <h3 class="ex_click">제품 상세보기 <i class="xi-angle-down-thin"></i></h3>
+
+            <div class="txt">
+                <p>
+                    <strong>제품명</strong> <br>
+                    트래블 텀블러
+                </p>
+
+                <p>
+                    <strong>재질</strong> <br>
+                    텀블러 1개
+                </p>
+
+                <p>
+                    <strong>구성품</strong> <br>
+                    실리콘 고무, 폴리에틸렌, 폴리시클로헥산-1,4-디메틸렌테레프탈레이트
+                </p>
+
+                <p>
+                    <strong>높이</strong> <br>
+                    209.9+/-1mm
+                </p>
+
+                <p>
+                    <strong>지름</strong><br>
+                    92.7+/-0.5
+                </p>
+
+                <p>
+                    <strong>무게</strong><br>
+                    175+/-9g
+                </p>
+
+                <p>
+                    <strong>용량</strong><br>
+                    540ml
+                </p>
+
+                <p>
+                    <strong>제조자</strong><br>
+                    ZHONGSHAN MEITU INDUSTRY LIMITED
+                </p>
+
+                <p>
+                    <strong>수입자</strong><br>
+                    네슬레코리아 유한책임회사
+                </p>
+
+                <p>
+                    <strong>제조국</strong><br>
+                    중국
+                </p>
+
+                <p>
+                    <strong>품질보증기준</strong><br>
+                    구입일로부터 보증기간 12개월 제공
+                    <br>
+                    A/S 책임자와 전화번호: 네스프레소 전용 클럽 080-734-1111
+                    <br>
+                    (매일 9시-18시 / 수신자 부담)
+                </p>
+
+                <p>
+                    <strong>주의사항</strong>
+                    <br>
+                    ※수입 식품 안전 관리 특별법에 의한 수입신고를 필함 <br>
+                    ※ 본 제품은 공정거래위원회 고시 소비자 분쟁 해결 기준에 의거, 교환 또는 보상 받으실 수 있습니다. <br>
+                    ※ 부정, 불량식품 신고는 국번없이 1399
+                </p>
+
+                <p>
+                    <strong>식품용</strong>
+                    <br>
+                    1. 식기세척기 사용 가능 <br>
+                    2. 전자레인지 사용 불가 <br>
+                    3. 오븐 사용 불가
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="rel-product">
+        <div class="rel-product-title">
+            <h5>관련 상품</h5>
+        </div>
+
+        <section>
+            <article>
+                <a href="#">
+                    <img src="img/acc-vertuo-travel02.avif" alt="related-product1">
+
+                    <p class="name">트래블 머그 미디엄</p>
+                </a>
+                <div class="price">
+                    <p>₩35,000</p>
+                </div>
+
+                <div class="btn">
+                    <button><span><i class="xi-plus-thin"></i> 장바구니</span></button>
+                </div>
+            </article>
+
+            <article>
+                <a href="#">
+                    <img src="img/acc-vertuo-travel04.png" alt="related-product2">
+
+                    <p class="name">트래블 머그 터치</p>
+                </a>
+                <div class="price">
+                    <p>₩30,000</p>
+                </div>
+
+                <div class="btn">
+                    <button><span><i class="xi-plus-thin"></i> 장바구니</span></button>
+                </div>
+            </article>
+
+            <article>
+                <a href="#">
+                    <img src="img/acc-vertuo6.avif" alt="related-product2">
+
+                    <p class="name">버츄오 그랑 룽고 컵 세트</p>
+                </a>
+                <div class="price">
+                    <p>₩39,000</p>
+                </div>
+
+                <div class="btn">
+                    <button><span><i class="xi-plus-thin"></i> 장바구니</span></button>
+                </div>
+            </article>
+
+            <article>
+                <a href="#">
+                    <img src="img/acc-vertuo10.avif" alt="related-product2">
+
+                    <p class="name">버츄오 머그 컵 세트 라지</p>
+                </a>
+                <div class="price">
+                    <p>₩45,000</p>
+                </div>
+
+                <div class="btn">
+                    <button><span><i class="xi-plus-thin"></i> 장바구니</span></button>
+                </div>
+            </article>
+
+            <article>
+                <a href="#">
+                    <img src="img/recycle1.avif" alt="related-product2">
+
+                    <p class="name">NEW 캡슐 재활용백</p>
+                </a>
+                <div class="price">
+                    <p>₩0</p>
+                </div>
+
+                <div class="btn">
+                    <button><span><i class="xi-plus-thin"></i> 장바구니</span></button>
+                </div>
+            </article>
+
+            <article>
+                <a href="#">
+                    <img src="img/recycle2.avif" alt="related-product2">
+
+                    <p class="name">캡슐 재활용백 수거 요청</p>
+                </a>
+                <div class="price">
+                    <p>₩0</p>
+                </div>
+
+                <div class="btn">
+                    <button><span><i class="xi-plus-thin"></i> 장바구니</span></button>
+                </div>
+            </article>
+        </section>
+    </div>
+
+
+
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-category category1">
+                <div class="footer-click">
+                    <h3>네스프레소</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="#">지속 가능성</a>
+                    <a href="#">채용</a>
+                    <a href="#">네스프레소 레시피</a>
+                    <a href="#">회사 소개</a>
+                </div>
+            </div>
+
+            <div class="footer-category category2">
+                <div class="footer-click">
+                    <h3>고객 서비스</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="#">머신 사용</a>
+                    <a href="#">배송 조회</a>
+                    <a href="#">주문 조회 / 취소</a>
+                    <a href="#">클럽 멤버 가입</a>
+                </div>
+            </div>
+
+            <div class="footer-category category3">
+                <div class="footer-click">
+                    <h3>문의</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="https://bizmessage.kakao.com/chat/open/@nespresso_club?extra=NPmobile&bot=true&event=start" target="_blank">카카오톡 상담</a>
+                    <a href="tel:0807341111" target="_blank">국내 전화</a>
+                    <a href="tel:+82232771398" target="_blank">국제 전화</a>
+                    <a href="https://www.nespresso.com/kr/ko/contactus" target="_blank">이메일 문의</a>
+                </div>
+            </div>
+
+            <div class="footer-category category4">
+                <div class="footer-click">
+                    <h3>SNS</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="https://www.instagram.com/nespresso.kr" target="_blank">인스타그램</a>
+                    <a href="https://www.youtube.com/user/nespresso" target="_blank">유튜브</a>
+                    <a href="https://www.twitter.com/nespresso" target="_blank">X</a>
+                    <a href="https://www.facebook.com/Nespresso" target="_blank">페이스북</a>
+                    <a href="https://www.pinterest.com/nespresso/" target="_blank">핀터레스트</a>
+                </div>
+            </div>
+
+            <div class="footer-category category4">
+                <div class="footer-click">
+                    <h3>약관·정책</h3>
+                    <i class="xi-angle-down"></i>
+                </div>
+
+                <div class="footer-txt">
+                    <a href="#">판매이용약관</a>
+                    <a href="#" class="highlight">개인정보 처리방침</a>
+                    <a href="#">쿠키</a>
+                    <a href="#">사이트맵</a>
+                    <a href="#">웹 접근성</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-ex">
+            <div class="lan-box">
+                <form class="language">
+                    <select name="language" id="language">
+                        <option value="한국어">한국어</option>
+                        <option value="english">English</option>
+                    </select>
+                </form>
+            </div>
+
+            <div class="payment">
+                <img src="img/payment.png" alt="payment img">
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="txt">
+                <p>상호 : 네슬레코리아 유한책임회사</p>
+                <p>대표자 : 토마스제프리카소</p>
+            </div>
+
+            <div class="txt">
+                <p>사업자등록번호 : 110-86-10100</p>
+                <a href="#">통신판매업신고 : 2014-서울서대문-0247</a>
+            </div>
+
+            <div class="txt">
+                <a href="#">채무지급보증안내</a>
+                <a href="#">정보보호관리체계</a>
+                <a href="#">대표번호 : 080-734-1111</a>
+            </div>
+
+            <div class="txt">
+                <a href="#">이메일 : club.korea@nespresso.com</a>
+            </div>
+
+            <div class="txt">
+                <p><address>주소 : 서울시 서대문구 충정로70 웨스트게이트타워 10, 12, 16층</address></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="top-down">
+        <div class="topBtn">
+            <i class="xi-angle-up"></i><br>
+        </div>
+
+        <div class="downBtn">
+            <i class="xi-angle-down"></i>
+        </div>
+    </div>
+
+    <div class="adBanner">
+
+    </div>
+</body>
+</html>

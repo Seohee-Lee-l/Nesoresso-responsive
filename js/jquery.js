@@ -645,6 +645,16 @@ $(function() {
                 $(this).addClass('active');
             }
         });
+
+        $(".item-page .item-imgs").each(function() {
+            const imgTop=$(this).offset().top;
+            const imgHeight=$(this).outerHeight();
+            const winBottom=$(window).scrollTop()+$(window).height();
+
+            if (winBottom>imgTop-10) {
+                $(this).addClass('active');
+            }
+        });
     });
 
     // 페이지 로드시도 체크
