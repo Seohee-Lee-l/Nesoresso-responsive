@@ -655,6 +655,24 @@ $(function() {
                 $(this).addClass('active');
             }
         });
+
+        $('.recycle-page .rec-img img').each(function() {
+            const recTop=$(this).offset().top;
+            const winBottom=$(window).scrollTop()+$(window).height();
+
+            if (winBottom>recTop-50) {
+                $(this).addClass('active');
+            }
+        });
+
+        $('.recycle-page .recycle-txt').each(function() {
+            const recTxtTop=$(this).offset().top;
+            const winBottom=$(window).scrollTop()+$(window).height();
+
+            if (winBottom>recTxtTop-50) {
+                $(this).addClass('active');
+            }
+        })
     });
 
     // 페이지 로드시도 체크

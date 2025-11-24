@@ -589,6 +589,45 @@ a {
     animation-delay: 1.2s;
 }
 
+.recycle-page {
+    width: 95%;
+    height: 100%;
+    margin: 1rem auto 5%;
+}
+
+.recycle-page h4 {
+    font-size: 1.4rem;
+    text-align: center;
+    color: #0a0a0a;
+    margin-bottom: 3%;
+    font-weight: 400;
+}
+
+.recycle-page .rec-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+}
+
+.recycle-page .rec-img img.active {
+    animation: fadeIn 1s forwards;
+}
+
+.recycle-page .recycle-txt {
+    text-align: center;
+    margin-top: 3%;
+}
+
+.recycle-page .recycle-txt img {
+    margin-bottom: 2%;
+}
+
+.recycle-page .recycle-txt p {
+    color: #0a0a0a;
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
 
 .detail {
     width: 95%;
@@ -1224,6 +1263,25 @@ a {
         line-height: 90px;
     }
 
+    .item-page .page1 .txt-group .txt2 {
+        height: auto !important;
+        line-height: normal !important;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .recycle-page h4 {
+        font-size: 1.6rem;
+    }
+
+    .recycle-page .recycle-txt img {
+        width: 40px;
+    }
+
+    .recycle-page .recycle-txt p {
+        font-size: 0.9rem;
+    }
+
     .taste ul li {
         font-size: 1rem;
     }
@@ -1449,6 +1507,11 @@ a {
         font-size: 1.2rem;
     }
 
+    .item-page .txt-group .txt2 {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
     .itempage2-title {
         font-size: 1.4rem;
     }
@@ -1459,6 +1522,38 @@ a {
 
     .item-page2 .article span {
         font-size: 0.8rem;
+    }
+
+    .recycle-page {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .recycle-page .recycle-title {
+        width: 65%;
+    }
+
+    .recycle-page .recycle-title h4 {
+        text-align: left;
+    }
+
+    .recycle-page .recycle-txt {
+        opacity: 0;
+    }
+
+    .recycle-page .recycle-txt img {
+        width: 50px;
+    }
+
+    .recycle-page .recycle-txt p {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .recycle-page .recycle-txt.active {
+        animation: fadeIn 1s forwards;
+        animation-delay: .6s;
     }
 
     .ex .ex_click {
@@ -1581,5 +1676,9 @@ a {
     
     .search-pop-down .search-wrapper .search .search-icon {
         flex-shrink: 0;
+    }
+    
+    .search-pop-down .search-wrapper .search .search-icon button {
+        font-size: 1.3rem;
     }
 }
